@@ -1,0 +1,29 @@
+I"<h1 id="blog">Blog</h1>
+<p><a href="/blog/tag/">Full list of tags</a></p>
+
+<p>Welcome to my blog! Here you’ll find articles mostly on (probably) the lean
+theorem prover, philosophy, maths, and maybe the odd rant about the education
+system (warning: rants may be contradictory).</p>
+
+<h2 id="latest-posts">Latest Posts</h2>
+
+<table>
+  
+    <tr class="post-summary">
+      <td>22 Apr 2018</td>
+      <td><a href="/2018/04/22/criticism-fta.html">A Criticism of the Fine-Tuning Argument</a></td>
+      <td>
+        
+          <small>
+          <a class="tag" href="/blog/tag/#philosophy">philosophy</a>
+          </small>
+        
+          <small>
+          <a class="tag" href="/blog/tag/#theology">theology</a>
+          </small>
+        
+      </td>
+    </tr>
+  
+</table>
+:ET

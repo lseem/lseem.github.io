@@ -2,7 +2,15 @@
 layout: default
 title: Blog
 ---
-<h1>Latest Posts</h1>
+
+# Blog
+[Full list of tags](/blog/tag/)
+
+Welcome to my blog! Here you'll find articles mostly on (probably) the lean
+theorem prover, philosophy, maths, and maybe the odd rant about the education
+system (warning: rants may be contradictory).
+
+## Latest Posts
 
 <table>
   {% for post in site.posts %}
@@ -11,7 +19,9 @@ title: Blog
       <td><a href="{{ post.url }}">{{ post.title }}</a></td>
       <td>
         {% for tag in post.tags %}
+          <small>
           <a class="tag" href="/blog/tag/#{{ tag | slugify }}">{{ tag }}</a>
+          </small>
         {% endfor %}
       </td>
     </tr>

@@ -1,1 +1,95 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-09-06T22:08:49+01:00</updated><id>http://localhost:4000/feed.xml</id></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-09-07T15:37:19+01:00</updated><id>http://localhost:4000/feed.xml</id><entry><title type="html">A Criticism of the Fine-Tuning Argument</title><link href="http://localhost:4000/2018/04/22/criticism-fta.html" rel="alternate" type="text/html" title="A Criticism of the Fine-Tuning Argument" /><published>2018-04-22T00:00:00+01:00</published><updated>2018-04-22T00:00:00+01:00</updated><id>http://localhost:4000/2018/04/22/criticism-fta</id><content type="html" xml:base="http://localhost:4000/2018/04/22/criticism-fta.html">&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;This essay serves as a criticism of the Fine-Tuning Argument (henceforth, for brevity, referred to using the acronym FTA) for the existence of God.
+In order to do so we recognise FTA’s reliance on the notion of Common Sense.
+We then analyse the notion of Common Sense, and find where it is or is not valid.
+Having found that Common Sense is only valid from certain perspectives, we then show that the FTA, relying on Common Sense, is made from a perspective where Common Sense is not valid.
+Therefore the FTA is not a valid argument for the existence of God.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-fine-tuning-argument-for-the-existence-of-god&quot;&gt;The Fine-Tuning Argument for the Existence of God&lt;/h2&gt;
+
+&lt;p&gt;We begin by outlining the FTA.&lt;/p&gt;
+
+&lt;p&gt;The constants of the universe, which are called “constants” by their virtue of being unit-independent and are found by physicists using the method of science (that method viewed by us to be currently the most effective known for measuring reality) are such that if changed even very slightly outside the limits of their experimental errors then the resulting reality would be a very different one, indeed one in which we would not exist.
+It is therefore highly unlikely that these constants became so finely-tuned
+through chance, and it is therefore reasonable to assume that God fixed those
+constants, and therefore God exists.&lt;/p&gt;
+
+&lt;p&gt;The first sentence, talking about the changing of physical constants, is one which is irrefutable.
+If we create a universe which follows the same laws of logic as our current one, and it is therefore valid to use mathematical methods as is common in science, but this universe has differing constants, then it has been shown mathematically that, for example, the universe would instantaneously collapse, or that atoms would not form, or that, stars would never form, etc.
+This is what we shall refer to as a scientific fact - given our current theory (which we know for sure is incomplete), then changing the physical constants results in a universe in which humans would not exist, and indeed that which we currently regard as life would not exist.&lt;/p&gt;
+
+&lt;p&gt;All the criticisms are from the second sentence, which talks about conclusions from this scientific fact.&lt;/p&gt;
+
+&lt;p&gt;The second sentence talks about a notion of things being “unlikely” and probability.
+This is very vaguely defined.
+When we talk about probability, we have a few prerequisites which are well defined.
+Firstly, we have a set of all possible events.
+Secondly, each event is associated with a probability of that event occurring.
+Thirdly, we have the requirement that the summation of the probability of each event, over all events, be equal to 1.
+In this case, all the possible events are all the possible different unique universes defined by their various physical constants.
+Crucially, we do not have probabilities associated with each universe - the likelihood of the existence of each universe.
+It is therefore useless to talk about the likelihood of the existence of this universe.&lt;/p&gt;
+
+&lt;p&gt;How might we find out the probability of each universe existing?
+Usually, we would use science.
+We would on the one hand model the situation mathematically, and then on the other hand verify this experimentally.
+In the case of throwing a die, for example, would model this mathematically.
+We assume that the die is a cube, and therefore has geometric symmetry resulting in no particular preference for each side.
+Therefore the probability of the die landing on one particular face is equal to the probability of another face.
+But there are only 6 faces, so there are only 6 events, and the probabilities of all the events must sum to 1.
+Therefore the probability of the die landing on each face is \( \frac{1}{6} \).
+We then verify this experimentally, throwing hundreds of thousands of dice and counting out of all the times that the dice are thrown, how many times each side turns up.&lt;/p&gt;
+
+&lt;p&gt;First of all, while we might come up with some sort of mathematical theory as to what the probability of each universe existing, we have no way of measuring whether this theory is true.
+We therefore have an unverifiable hypothesis.
+Therefore the hypotheses, “the probability of a universe having the physical
+constants of this one is 1, and the probability of a universe having different
+physical constants is 0”, and “the probability of a universe having the
+physical constants of this one is \(\frac{1}{2}\), and the probability of a
+universe having different physical constants is \(\frac{1}{2}\)” are both as valid as the other.
+The only hypothesis we know to be weak (read “false”) given the assumption that
+this universe exists (and we could verify this experimentally), is that “the
+probability of a universe having the physical constants of this one is 0”, because then this universe would not exist - but, by experimental evidence, it does exist, therefore the hypothesis is weak.&lt;/p&gt;
+
+&lt;p&gt;The FTA assumes a uniform distribution of universes - it assumes that all possible universes are as likely as each other - because it is natural and normal to do so.
+It is Common Sense.&lt;/p&gt;
+
+&lt;p&gt;We claim that Common Sense is not valid when talking about universes.&lt;/p&gt;
+
+&lt;h2 id=&quot;common-sense&quot;&gt;Common Sense&lt;/h2&gt;
+
+&lt;p&gt;Common Sense is the ability to understand that which is shared by nearly all people.&lt;/p&gt;
+
+&lt;p&gt;We note that even the definition of Common Sense is vague, and this is one of the fundamental flaws of Common Sense.
+Due to the vague definition of Common Sense (one might even say that the definition of Common Sense is just Common Sense - everyone knows it), it is difficult to argue against.&lt;/p&gt;
+
+&lt;p&gt;It is not, however, impossible to analyse the phenomenon.
+We start with an example.&lt;/p&gt;
+
+&lt;p&gt;Common Sense tells us that the Earth is flat.
+For people who have grown up thinking that the Earth is flat, learning that the Earth is roughly spherically shaped is absurd.
+Note that in order to survive and thrive, it is not necessary to know that the Earth is round.
+This is because the roundness of the Earth has very little impact on our everyday lives.
+And from a human perspective, the Earth looks very flat.
+As your perspective gets smaller and smaller, the earth looks flatter and flatter, and critically, it becomes experimentally valid to claim that the Earth is flat.
+For a human, approximating a sphere to a flat surface is fine, because the curvature of the Earth is so slight from our perspective that it does not matter.&lt;/p&gt;
+
+&lt;p&gt;Using science, we can extend our perspectives to beyond the limits of that of a human.
+We use creativity to create mathematical models of the world around us.
+We use creativity, logic, and mathematics, to analyse these models and come up with predictions about the universe.
+We use creativity to devise experiments to test the predictions of those models and try to disprove them.&lt;/p&gt;
+
+&lt;p&gt;In other words, we use science to infer things about the universe which are beyond our direct human perspective.
+A flat-Earth theory works, until you devise a clever experiment which tests predictions of the flat-Earth theory, to show that a round-Earth theory works better than a flat-Earth theory.&lt;/p&gt;
+
+&lt;p&gt;Common Sense only works for things that are in a human perspective.
+For things outside a human perspective, Common Sense is not valid.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
+
+&lt;p&gt;Universes are outside human perspectives.
+We have shown that Common Sense is not valid from outside a human perspective.
+The FTA relies on Common Sense.
+But the FTA deals with universes, which are outside the human perspective.
+Therefore since Common Sense is invalid when dealing with universes, then the FTA is invalid when dealing with universes.
+Therefore the FTA is invalid.&lt;/p&gt;</content><author><name></name></author><category term="philosophy" /><category term="theology" /><summary type="html">Abstract This essay serves as a criticism of the Fine-Tuning Argument (henceforth, for brevity, referred to using the acronym FTA) for the existence of God. In order to do so we recognise FTA’s reliance on the notion of Common Sense. We then analyse the notion of Common Sense, and find where it is or is not valid. Having found that Common Sense is only valid from certain perspectives, we then show that the FTA, relying on Common Sense, is made from a perspective where Common Sense is not valid. Therefore the FTA is not a valid argument for the existence of God.</summary></entry></feed>
