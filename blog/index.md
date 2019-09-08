@@ -4,7 +4,7 @@ title: Blog
 ---
 
 # Blog
-[Full list of tags](/blog/tag/)
+[Full list of tags](/blog/tag.html)
 
 Welcome to my blog! Here you'll find articles mostly on (probably) the lean
 theorem prover, philosophy, maths, and maybe the odd rant about the education
