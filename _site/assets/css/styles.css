@@ -30,6 +30,8 @@ nav li { float: right; margin-right: 1em; list-style: none; }
 
 nav li a { display: block; }
 
+code { background: #eeeee3; }
+
 .current { color: black; }
 
 .post-summary { float: left; }

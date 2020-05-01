@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Dependent Type Theory of Lean | Luca Seemungal</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link type="application/atom+xml" rel="alternate" href="/feed.xml" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+    </script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+  </head>
+  <body>
+    <nav>
+  <span><a href="/">Luca's Website</a></span>
+  <ul>
+  
+    <li><a href="/lean/" >
+      Lean
+    </a></li>
+  
+    <li><a href="/blog/" >
+      Blog
+    </a></li>
+  
+  </ul>
+</nav>
+
+    <h1>The Dependent Type Theory of Lean</h1>
+<p>tags:
+  
+  <small>
+  <a class="tag" href="/blog/tag/#mathematics">mathematics</a>
+  </small>
+  
+  <small>
+  <a class="tag" href="/blog/tag/#lean">lean</a>
+  </small>
+  
+</p>
+<p><em>26 Oct 2019</em></p>
+
+<p>In this blog post, we outline the foundational types of the type theory
+implemented in Lean. These types are <em>simple types</em>, <em>dependent function
+types</em>, and <em>dependent product types</em>.</p>
+
+<h2 id="simple-types">Simple types</h2>
+
+<p>We start with an infinite hierarchy of <em>simple types</em>:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#check Prop
+#check Type 0
+#check Type 1
+#check Type 2
+#check Type 3
+</code></pre></div></div>
+<p>and so on, so that <code class="highlighter-rouge">Type i : Type i+1</code> (we write <code class="highlighter-rouge">a : α</code> to say that “<code class="highlighter-rouge">a</code>
+is of type <code class="highlighter-rouge">α</code>. Notice that <code class="highlighter-rouge">Type 0</code> can just be abbreviated to <code class="highlighter-rouge">Type</code>,
+and that <code class="highlighter-rouge">Prop</code> is the “most fundamental” type. The type <code class="highlighter-rouge">Prop</code> takes a
+special place in Lean, and has special properties which will not be discussed
+here, but possibly in a later post.</p>
+
+<h2 id="dependent-types">Dependent types</h2>
+
+<p>Now we encounter dependent types. There are two families of dependent types;
+these are <em>dependent function types</em> and <em>dependent product types</em>.
+Intuitively, these are the type theory versions of functions and Cartesian
+products (respectively) in set theory.</p>
+
+<p>A dependent type is a type that depends on another type; in a sense the
+dependent type is “parametrised” by that type which is depended upon.</p>
+
+<h3 id="dependent-function-types-or-π-types">Dependent function types, or Π-types</h3>
+
+<p>The most basic construction of a Π-type (dependent function type) is the
+following:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>variable α : Type
+variable β : Type
+#check Π (x : α), β
+</code></pre></div></div>
+<p>Let us declare a variable of the above type to see what’s going on:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>variable α : Type
+variable β : Type
+variable f : Π (x : α), β
+#check f
+</code></pre></div></div>
+<p>and we see that <code class="highlighter-rouge">f</code> is of the type <code class="highlighter-rouge">α→β</code> which is shorthand for <code class="highlighter-rouge">Π (x :
+α), β</code>.</p>
+
+<p>But in what way is the above <em>dependent type</em> “dependent”? The fact of the
+matter is that it is not “dependent”. But now with the above “function type” we
+may construct a dependent type that is actually “dependent”.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>variable α : Type
+variable β : α → Type
+-- we can also write it like this: variable β : Π x : α, Type
+-- but the above notation is more enlightening and more simple
+#check Π x : α, β x
+</code></pre></div></div>
+<p>Again, let us declare a variable of the above type:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>variable α : Type
+variable β : α → Type
+variable g : Π x : α, β x
+
+variable a : α
+
+#check g
+#check g a
+</code></pre></div></div>
+<p>and we see that <code class="highlighter-rouge">g</code> is like a  function that takes in a term of type <code class="highlighter-rouge">α</code>
+and outputs a type <code class="highlighter-rouge">β a</code>, which clearly depends on the value that <code class="highlighter-rouge">a</code>
+takes. So the above type is more clearly “dependent”, and it’s got a
+“function”, so we call it a “dependent function type”.</p>
+
+<h3 id="dependent-product-types-or-σ-types">Dependent product types, or Σ-types</h3>
+
+
+  </body>
+</html>
