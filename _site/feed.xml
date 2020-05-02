@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-05-01T21:23:38+01:00</updated><id>/feed.xml</id><entry><title type="html">Ray Tracing in \(S^3\) or \(H^3\) (or more general 3-Manifolds?)</title><link href="/2020/05/01/ray-tracing-in-s3-or-h3-or-more-general-3-manifolds.html" rel="alternate" type="text/html" title="Ray Tracing in \(S^3\) or \(H^3\) (or more general 3-Manifolds?)" /><published>2020-05-01T00:00:00+01:00</published><updated>2020-05-01T00:00:00+01:00</updated><id>/2020/05/01/ray-tracing-in-s3-or-h3-or-more-general-3-manifolds</id><content type="html" xml:base="/2020/05/01/ray-tracing-in-s3-or-h3-or-more-general-3-manifolds.html">&lt;p&gt;I have a project in mind, and this project is to write a ray tracer for non-euclidean geometries. While ultimately I am looking for full generality and would like to ray trace on any sufficiently regular 3-manifold, I will modestly set my first thousand-mile stone to ray tracing in the 3-sphere or in hyperbolic 3-space.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-05-02T10:53:31+01:00</updated><id>/feed.xml</id><entry><title type="html">Ray Tracing in \(S^3\) or \(H^3\) (or more general 3-Manifolds?)</title><link href="/2020/05/01/ray-tracing-in-s3-or-h3-or-more-general-3-manifolds.html" rel="alternate" type="text/html" title="Ray Tracing in \(S^3\) or \(H^3\) (or more general 3-Manifolds?)" /><published>2020-05-01T00:00:00+01:00</published><updated>2020-05-01T00:00:00+01:00</updated><id>/2020/05/01/ray-tracing-in-s3-or-h3-or-more-general-3-manifolds</id><content type="html" xml:base="/2020/05/01/ray-tracing-in-s3-or-h3-or-more-general-3-manifolds.html">&lt;p&gt;I have a project in mind, and this project is to write a ray tracer for non-Euclidean geometries. While ultimately I am looking for full generality and would like to ray trace on any sufficiently regular 3-manifold, I will modestly set my first thousand-mile stone to ray tracing in the 3-sphere or in hyperbolic 3-space.&lt;/p&gt;
 
 &lt;p&gt;This project is mainly inspired by the film &lt;em&gt;Interstellar&lt;/em&gt;, whose visual effects production studio &lt;a href=&quot;https://dneg.com&quot;&gt;Double Negative&lt;/a&gt; wrote a renderer in order to render the black hole in the film. This renderer, the &lt;em&gt;Double Negative Gravitational Renderer&lt;/em&gt;, was written in collaboration with Kip Thorne with the intention to essentially “simulate” general relativity so that the viewer would see such effects as gravitational lensing.&lt;/p&gt;
 
@@ -6,17 +6,17 @@
 
 &lt;ol&gt;
   &lt;li&gt;
-    &lt;p&gt;I’m going to write this ray tracer in &lt;a href=&quot;https://rust-lang.org&quot;&gt;rust&lt;/a&gt; because I am not a good programmer and so am not to be trusted with such dangerous tools as C/C++.&lt;/p&gt;
+    &lt;p&gt;I’m going to write this ray tracer in &lt;a href=&quot;https://rust-lang.org&quot;&gt;rust&lt;/a&gt; because I am not a good programmer and so am not to be trusted with such dangerous tools as C/C++. I’m first going to write this ray tracer for the CPU, and then I’m going to modify it so that it works on the GPU instead for performance benefits.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;I’m going to write on for Euclidean 3-space first. I will include my own way of dealing with linear algebra, and make sure that stuff works in the standard way.&lt;/p&gt;
+    &lt;p&gt;I’m going to write one for Euclidean 3-space first. I will include my own way of dealing with linear algebra, and make sure that stuff works in the standard way.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Depending on which seems easier, I will modify this Euclidean ray tracer to either ray trace in \(S^3\) or in \(H^3\)&lt;/p&gt;
+    &lt;p&gt;Depending on which seems easier, I will modify this Euclidean ray tracer to either ray trace in \(S^3\) or in \(H^3\).&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;In order to ray trace in \(H^3\) it may be that all I will have to do will be to change from ordinary linear algebra to Lorentzian linear algebra. But on the other hand, \(S^3\) can be modelled as a subset of \(\mathbb{R}^4\) and so it could be that this is actually easier. Either way, we shall see.&lt;/p&gt;
+&lt;p&gt;In order to ray trace in \(H^3\) it may be that all I will have to do will be to change from ordinary linear algebra to Lorentzian linear algebra. But on the other hand, \(S^3\) can be modelled as a subset of \(\mathbb{R}^4\) rather easily and so it could be that this is actually easier. One could also unify these approaches by having a radius parameter that ranges over \(\mathbb{C}\), so that we have \(S^3\) when the radius is \(1\), and \(H^3\) when the radius is \(i\). Either way, we shall see.&lt;/p&gt;
 
 &lt;p&gt;Something to note is that there has been some research done into this already. From what I could find, there has been already some research done at the &lt;a href=&quot;https://www.visgraf.impa.br/home/&quot;&gt;Vision and Graphics Laboratory&lt;/a&gt; at IMPA in Brazil. A couple of useful papers are&lt;/p&gt;
 &lt;ul&gt;
@@ -24,77 +24,7 @@
   &lt;li&gt;Tiago Novello, Vinicius da Silva, and Luiz Velho. &lt;strong&gt;“Global Illumination of Non-Euclidean Spaces”&lt;/strong&gt;. Technical Report TR-06-2020, VISGRAF Lab - IMPA, 2020. &lt;a href=&quot;https://www.visgraf.impa.br/Data/RefBib/PS_PDF/tr-06-2020/tr-06-2020.pdf&quot;&gt;pdf&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Another cautionary note is that a lot people on youtube who claim to have non-Euclidean ray tracers are actually just using portals and the such like. My project aims to accurately simulate the diffeo-geometric phenomena of ray tracing in curve 3-manifolds. For example, in \(S^3\), if you look in front of you, assuming that the light doesn’t dim etc, then you should see your back, flipped horizontally and vertically. I want this to fall naturally out of the ray tracing mechanism, I don’t want it to be some sort of contrived portal system.&lt;/p&gt;</content><author><name></name></author><category term="maths" /><category term="coding" /><summary type="html">I have a project in mind, and this project is to write a ray tracer for non-euclidean geometries. While ultimately I am looking for full generality and would like to ray trace on any sufficiently regular 3-manifold, I will modestly set my first thousand-mile stone to ray tracing in the 3-sphere or in hyperbolic 3-space.</summary></entry><entry><title type="html">Contributing to and messing about with mathlib</title><link href="/2019/11/22/contributing-to-and-messing-about-with-mathlib.html" rel="alternate" type="text/html" title="Contributing to and messing about with mathlib" /><published>2019-11-22T00:00:00+00:00</published><updated>2019-11-22T00:00:00+00:00</updated><id>/2019/11/22/contributing-to-and-messing-about-with-mathlib</id><content type="html" xml:base="/2019/11/22/contributing-to-and-messing-about-with-mathlib.html">&lt;p&gt;In this post I am going to outline exactly how to get mathlib inside VS-Code&lt;/p&gt;</content><author><name></name></author><category term="mathematics" /><category term="lean" /><summary type="html">In this post I am going to outline exactly how to get mathlib inside VS-Code</summary></entry><entry><title type="html">The Dependent Type Theory of Lean</title><link href="/2019/10/26/dtt-of-lean.html" rel="alternate" type="text/html" title="The Dependent Type Theory of Lean" /><published>2019-10-26T00:00:00+01:00</published><updated>2019-10-26T00:00:00+01:00</updated><id>/2019/10/26/dtt-of-lean</id><content type="html" xml:base="/2019/10/26/dtt-of-lean.html">&lt;p&gt;In this blog post, we outline the foundational types of the type theory
-implemented in Lean. These types are &lt;em&gt;simple types&lt;/em&gt;, &lt;em&gt;dependent function
-types&lt;/em&gt;, and &lt;em&gt;dependent product types&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;simple-types&quot;&gt;Simple types&lt;/h2&gt;
-
-&lt;p&gt;We start with an infinite hierarchy of &lt;em&gt;simple types&lt;/em&gt;:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#check Prop
-#check Type 0
-#check Type 1
-#check Type 2
-#check Type 3
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;and so on, so that &lt;code class=&quot;highlighter-rouge&quot;&gt;Type i : Type i+1&lt;/code&gt; (we write &lt;code class=&quot;highlighter-rouge&quot;&gt;a : α&lt;/code&gt; to say that “&lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt;
-is of type &lt;code class=&quot;highlighter-rouge&quot;&gt;α&lt;/code&gt;. Notice that &lt;code class=&quot;highlighter-rouge&quot;&gt;Type 0&lt;/code&gt; can just be abbreviated to &lt;code class=&quot;highlighter-rouge&quot;&gt;Type&lt;/code&gt;,
-and that &lt;code class=&quot;highlighter-rouge&quot;&gt;Prop&lt;/code&gt; is the “most fundamental” type. The type &lt;code class=&quot;highlighter-rouge&quot;&gt;Prop&lt;/code&gt; takes a
-special place in Lean, and has special properties which will not be discussed
-here, but possibly in a later post.&lt;/p&gt;
-
-&lt;h2 id=&quot;dependent-types&quot;&gt;Dependent types&lt;/h2&gt;
-
-&lt;p&gt;Now we encounter dependent types. There are two families of dependent types;
-these are &lt;em&gt;dependent function types&lt;/em&gt; and &lt;em&gt;dependent product types&lt;/em&gt;.
-Intuitively, these are the type theory versions of functions and Cartesian
-products (respectively) in set theory.&lt;/p&gt;
-
-&lt;p&gt;A dependent type is a type that depends on another type; in a sense the
-dependent type is “parametrised” by that type which is depended upon.&lt;/p&gt;
-
-&lt;h3 id=&quot;dependent-function-types-or-π-types&quot;&gt;Dependent function types, or Π-types&lt;/h3&gt;
-
-&lt;p&gt;The most basic construction of a Π-type (dependent function type) is the
-following:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;variable α : Type
-variable β : Type
-#check Π (x : α), β
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Let us declare a variable of the above type to see what’s going on:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;variable α : Type
-variable β : Type
-variable f : Π (x : α), β
-#check f
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;and we see that &lt;code class=&quot;highlighter-rouge&quot;&gt;f&lt;/code&gt; is of the type &lt;code class=&quot;highlighter-rouge&quot;&gt;α→β&lt;/code&gt; which is shorthand for &lt;code class=&quot;highlighter-rouge&quot;&gt;Π (x :
-α), β&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;But in what way is the above &lt;em&gt;dependent type&lt;/em&gt; “dependent”? The fact of the
-matter is that it is not “dependent”. But now with the above “function type” we
-may construct a dependent type that is actually “dependent”.&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;variable α : Type
-variable β : α → Type
--- we can also write it like this: variable β : Π x : α, Type
--- but the above notation is more enlightening and more simple
-#check Π x : α, β x
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Again, let us declare a variable of the above type:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;variable α : Type
-variable β : α → Type
-variable g : Π x : α, β x
-
-variable a : α
-
-#check g
-#check g a
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;and we see that &lt;code class=&quot;highlighter-rouge&quot;&gt;g&lt;/code&gt; is like a  function that takes in a term of type &lt;code class=&quot;highlighter-rouge&quot;&gt;α&lt;/code&gt;
-and outputs a type &lt;code class=&quot;highlighter-rouge&quot;&gt;β a&lt;/code&gt;, which clearly depends on the value that &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt;
-takes. So the above type is more clearly “dependent”, and it’s got a
-“function”, so we call it a “dependent function type”.&lt;/p&gt;
-
-&lt;h3 id=&quot;dependent-product-types-or-σ-types&quot;&gt;Dependent product types, or Σ-types&lt;/h3&gt;</content><author><name></name></author><category term="mathematics" /><category term="lean" /><summary type="html">In this blog post, we outline the foundational types of the type theory implemented in Lean. These types are simple types, dependent function types, and dependent product types.</summary></entry><entry><title type="html">The Myth of the Evil Terrorist</title><link href="/2019/09/09/the-myth-of-the-evil-terrorist.html" rel="alternate" type="text/html" title="The Myth of the Evil Terrorist" /><published>2019-09-09T00:00:00+01:00</published><updated>2019-09-09T00:00:00+01:00</updated><id>/2019/09/09/the-myth-of-the-evil-terrorist</id><content type="html" xml:base="/2019/09/09/the-myth-of-the-evil-terrorist.html">&lt;p&gt;In recent years Islamic terrorist attacks in Europe have somewhat taken over
+&lt;p&gt;Another cautionary note is that a lot people on youtube who claim to have non-Euclidean ray tracers are actually just using portals and the such like. My project aims to accurately simulate the diffeo-geometric phenomena of ray tracing in curved 3-manifolds. For example, in \(S^3\), if you look in front of you, assuming that the light doesn’t dim etc, then you should see your back, flipped horizontally and vertically. I want this to fall naturally out of the ray tracing mechanism, I don’t want it to be some sort of contrived portal system.&lt;/p&gt;</content><author><name></name></author><category term="maths" /><category term="coding" /><summary type="html">I have a project in mind, and this project is to write a ray tracer for non-Euclidean geometries. While ultimately I am looking for full generality and would like to ray trace on any sufficiently regular 3-manifold, I will modestly set my first thousand-mile stone to ray tracing in the 3-sphere or in hyperbolic 3-space.</summary></entry><entry><title type="html">The Myth of the Evil Terrorist</title><link href="/2019/09/09/the-myth-of-the-evil-terrorist.html" rel="alternate" type="text/html" title="The Myth of the Evil Terrorist" /><published>2019-09-09T00:00:00+01:00</published><updated>2019-09-09T00:00:00+01:00</updated><id>/2019/09/09/the-myth-of-the-evil-terrorist</id><content type="html" xml:base="/2019/09/09/the-myth-of-the-evil-terrorist.html">&lt;p&gt;In recent years Islamic terrorist attacks in Europe have somewhat taken over
 the media discourse. Certainly more people are killed in road accidents than in
 terrorist attacks; in the UK between 2000 and 2013, there were &lt;a href=&quot;https://www.start.umd.edu/gtd/&quot;&gt;89
 fatalities&lt;/a&gt; due to terrorist attacks (of all
