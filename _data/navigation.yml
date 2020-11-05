@@ -1,4 +1,4 @@
-- name: Lean
-  link: /lean/
 - name: Blog
   link: /blog/
+- name: Projects
+  link: /projects/
