@@ -6,9 +6,10 @@ title: Blog
 # Blog
 [Full list of tags](/blog/tag.html)
 
-Welcome to my blog! Here you'll find articles mostly on (probably) the lean
-theorem prover, philosophy, maths, and maybe the odd rant about the education
-system (warning: rants may be contradictory).
+![Not very seriously at all.][silly_me]
+
+Welcome to my blog! The seriousness with which you should read these articles is summarised by the accompanying picture.
+
 
 ## Latest Posts
 
@@ -32,3 +33,5 @@ system (warning: rants may be contradictory).
     </tr>
   {% endfor %}
 </table>
+
+[silly_me]: /assets/images/silly_me.jpg
