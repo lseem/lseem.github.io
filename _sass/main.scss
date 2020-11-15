@@ -1,26 +1,23 @@
 a, a:visited {
   text-decoration: none;
-  white-space: nowrap;
-  color: blue;
+  color: #44f;
 }
 
 a::before { content: "["; }
 a::after { content: "]"; }
 
 img {
-  max-width: 300px;
-  height: auto;
-  float: right;
+  width: 100%;
 }
 
 body {
-  margin: 10pt auto;
-  max-width: 640pt;
+  margin: auto;
+  max-width: 560pt;
   line-height: 1.6;
   font-family: sans-serif;
   font-size: 12pt;
   color: #444;
-  padding: 0pt 16pt;
+  padding: 0pt 10pt;
   background: #fffff3;
 }
 
@@ -79,11 +76,20 @@ code {
   background: #eeeee3;
 }
 
-.current {
-  color: black;
+.post-list {
+  padding: 0px;
+  list-style: none;
 }
 
 .post-summary {
-  float: left;
+  padding-bottom: 20px;
 }
 
+.post-summary p,h4 {
+  margin: 0;
+  font-size: 16pt;
+  font-weight: 400;
+}
+
+.post-link::before { content: ""; }
+.post-link::after { content: ""; }
