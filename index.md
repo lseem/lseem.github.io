@@ -5,11 +5,11 @@ title: Home
 
 # home
 
-![a sunny day in Leamington][me]
-
 My name is Luca Seemungal and I am a third year maths student studying at the
 University of Warwick.
 Email: firstname dot lastname at warwick dot ac dot uk
+
+![a sunny day in Leamington][me]
 
 ## summer research project
 

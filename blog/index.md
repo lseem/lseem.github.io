@@ -6,32 +6,27 @@ title: Blog
 # Blog
 [Full list of tags](/blog/tag.html)
 
-![Not very seriously at all.][silly_me]
+Welcome to my blog! Don't take this blog very seriously.
 
-Welcome to my blog! The seriousness with which you should read these articles is summarised by the accompanying picture.
+## Posts
 
-
-## Latest Posts
-
-<table>
+<ul class="post-list">
   {% for post in site.posts %}
-    <tr class="post-summary">
-      <td>{{ post.date | date_to_string }}</td>
-      <td><a href="{{ post.url }}">
+    <li class="post-summary">
+          <small>
+      <span>{{ post.date | date_to_string }}
+        {% for tag in post.tags %}
+          <a class="tag" href="/blog/tag/#{{ tag | slugify }}">{{ tag }}</a>
+        {% endfor %}
+	</span>
+          </small>
+      <h4><a class="post-link" href="{{ post.url }}">
         {{ post.title }}
         {% if post.subtitle %}
-        : {{ post.subtitle }}
+          <p><small>{{ post.subtitle }}</small></p>
         {% endif %}
-      </a></td>
-      <td>
-        {% for tag in post.tags %}
-          <small>
-          <a class="tag" href="/blog/tag/#{{ tag | slugify }}">{{ tag }}</a>
-          </small>
-        {% endfor %}
-      </td>
-    </tr>
+      </a>
+      </h4>
+    </li>
   {% endfor %}
-</table>
-
-[silly_me]: /assets/images/silly_me.jpg
+</ul>
