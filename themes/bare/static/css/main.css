@@ -1,0 +1,95 @@
+a, a:visited {
+  text-decoration: none;
+  color: #44f;
+}
+
+a::before { content: "["; }
+a::after { content: "]"; }
+
+img {
+  width: 100%;
+}
+
+body {
+  margin: auto;
+  max-width: 560pt;
+  line-height: 1.6;
+  font-family: sans-serif;
+  font-size: 12pt;
+  color: #444;
+  padding: 0pt 10pt;
+  background: #fffff3;
+}
+
+header a {
+  font-size: 36pt;
+  color: #777;
+  font-weight: bold;
+}
+
+header span {
+  float: right;
+  font-size: 16pt;
+  font-style: oblique;
+  padding: 10pt 10pt;
+}
+
+h1 { font-size: 24pt; }
+h2 { font-size: 18pt; }
+h3 { font-size: 16pt; }
+
+nav {
+  padding: 10pt 0pt;
+  display: block;
+  border-bottom: 1px solid black;
+}
+
+nav::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+nav span {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  float: right;
+  margin-right: 1em;
+  list-style: none;
+}
+
+nav li a {
+  display: block;
+}
+
+code {
+  background: #eeeee3;
+}
+
+.post-list {
+  padding: 0px;
+  list-style: none;
+}
+
+.post-summary {
+  padding-bottom: 20px;
+}
+
+.post-summary p,h4 {
+  margin: 0;
+  font-size: 16pt;
+  font-weight: 400;
+}
+
+.post-link::before { content: ""; }
+.post-link::after { content: ""; }

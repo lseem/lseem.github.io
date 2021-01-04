@@ -1,0 +1,21 @@
+{{/* <nav>
+  <span><a href="/">Luca's Website</a></span>
+  <ul>
+  {{ range $page := .Site.Menus.Main }}
+    <li><a href="{{ . }}" {{ if eq $page.BaseURL .BaseURL }}class="current"{{ end }}>
+      {{ $page.Title }}
+    </a></li>
+  {{ end }}
+  </ul>
+</nav>
+*/}}
+
+<nav>
+  <span><a href="/">Luca's Website</a></span>
+  <ul>
+    {{ range .Site.Sections }}
+      <li><a href="{{ .URL }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+</nav>
+
