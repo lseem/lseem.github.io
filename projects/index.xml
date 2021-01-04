@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on </title>
+    <link>http://lseem.xyz/projects/</link>
+    <description>Recent content in Projects on </description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="http://lseem.xyz/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Second Year Essay</title>
+      <link>http://lseem.xyz/projects/second-year-essay/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://lseem.xyz/projects/second-year-essay/</guid>
+      <description>{{ .Date := 0 }}
+In my second year I wrote The Isoperimetric Problem: Geometry and Analysis and I guess I&amp;rsquo;m quite proud of it. I think the markers didn&amp;rsquo;t like the fact that I didn&amp;rsquo;t provide pin-point references, so sorry! Although, below is a list of some references which I think you might want to take a look at:
+ Felix Bernstein. “Über die isoperimetrische Eigenschaft des Kreises auf der Kugeloberfläche und in der Ebene”.</description>
+    </item>
+    
+    <item>
+      <title>Summer Research Project 2020</title>
+      <link>http://lseem.xyz/projects/summer-research-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://lseem.xyz/projects/summer-research-project/</guid>
+      <description>Over the summer I did a project in free boundary minimal annuli in the unit ball. Specifically, I studied an object called the critical catenoid, which is the only known example of a free boundary minimal annulus in the unit ball. I made a poster. </description>
+    </item>
+    
+  </channel>
+</rss>

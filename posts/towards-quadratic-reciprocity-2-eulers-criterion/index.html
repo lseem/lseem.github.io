@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Towards Quadratic Reciprocity | Luca Seemungal</title>
+    <link rel="stylesheet" href="/css/main.css">
+    
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+  </head>
+  <body>
+    
+
+<nav>
+  <span><a href="/">Luca's Website</a></span>
+  <ul>
+    
+      <li><a href="/posts/">Posts</a></li>
+    
+      <li><a href="/projects/">Projects</a></li>
+    
+      <li><a href="/resources/">Resources</a></li>
+    
+  </ul>
+</nav>
+
+
+
+
+
+<h1>Towards Quadratic Reciprocity</h1>
+
+  <h2>Part 2 - Euler&#39;s Criterion</h2>
+
+
+
+
+<p>tags:
+  
+  <small>
+    <a href="http://lseem.xyz/tags/maths">maths</a>
+  </small>
+  
+  <small>
+    <a href="http://lseem.xyz/tags/number-theory">number-theory</a>
+  </small>
+  
+</p>
+
+
+<p><em>Monday, Jun 8 2020</em></p>
+
+
+
+<nav id="TableOfContents"></nav>
+
+
+<p>In this blog post, we continue where we left off in order to derive Euler&rsquo;s Criterion. First, we define some key terms that will be important to us.</p>
+<p><strong>Definition (quadratic residue):</strong> Let \(m\in\mathbb{N}\), and let \(a\in\mathbb{Z}\) be coprime to \(m\). We say that \(a\) is a quadratic residue modulo \(m\) if there exists \(x\in\mathbb{Z}\) such that \(x^2\equiv_m a\). We say that \(a\) is a quadratic non-residue modulo \(m\) if there does not exist any such \(x\).</p>
+<p><strong>Definition (Legendre symbol):</strong> Let \(p\) be an odd prime, and let \(a\in\mathbb{Z}\). Then the Legendre symbol is defined as
+\[ \begin{pmatrix}a\\p\end{pmatrix} := \begin{cases}
+0 &amp; \text{if } p|a \<br>
+1 &amp; \text{if } a \text{ is a quadratic residue modulo }p \<br>
+-1 &amp; \text{if }a \text{ is a quadratic non-residue modulo }p. \end{cases} \]</p>
+<p><strong>Theorem 1:</strong> Let \(p\) be an odd prime. Then for any \(a\in\mathbb{Z}\) that is coprime to \(p\), we have
+\[ -\begin{pmatrix} a \\ p \end{pmatrix} a^{(p-1)/2} \equiv_p (p-1)!. \]</p>
+<p><em>Proof:</em> Suppose first that \(a\) is a quadratic non-residue modulo \(p\). Then
+\[ (p-1)! \equiv_p a\cdot\prod_{j\in(\mathbb{Z}/p\mathbb{Z})^{\times}\setminus\{1,a\}}j. \]
+Now, since \((\mathbb{Z}/p\mathbb{Z})^{\times}\) is a group, for each \(j\) in the above product there is a unique element \(y\) in the product such that \(jy\equiv_p a\). So we match these elements up with each other to obtain \((p-1)/2\) pairs whose product is \(a\), giving
+\[ (p-1)! \equiv_p a\cdot a^{(p-3)/2} \equiv_p a^{(p-1)/2} \equiv_p - \begin{pmatrix} a \\ p \end{pmatrix} a^{(p-1)/2}. \]</p>
+<p>Now suppose that \(a\) is a quadratic residue modulo \(p\), so that \(a\equiv_p x^2\) for some \(x\in(\mathbb{Z}/p\mathbb{Z})^{\times}\). Since \(p\) is odd, \(x\not\equiv_pp-x\), and so \(x(p-x)\equiv_p-x^2\equiv_pa\). Therefore,
+\[ (p-1)! \equiv_p -a\cdot\prod_{j\in(\mathbb{Z}/p\mathbb{Z})^{\times}\setminus\{x,p-x\}}j. \]
+Similarly to the first case, since \((\mathbb{Z}/p\mathbb{Z})^{\times}\) is a group, for each \(j\) in the above product there is a unique element \(y\) in the product such that \(jy\equiv_p a\). So we match these elements up with each other to obtain \((p-1)/2\) pairs whose product is \(a\), giving
+\[ (p-1)! \equiv_p -a\cdot a^{(p-3)/2} \equiv_p -a^{(p-1)/2} \equiv_p -\begin{pmatrix} a \\ p \end{pmatrix} a^{(p-1)/2}. \]
+QED.</p>
+<p><strong>Corollary (Wilson&rsquo;s Theorem):</strong> If \(p\) is prime, then \((p-1)!\equiv_p -1\). If \(m\geq6\) is composite, then \((m-1)!\equiv_m0\).</p>
+<p><em>Proof:</em> If \(p\) is prime, then take \(a=1\) in Theorem 1, and the result follows.</p>
+<p>So let \(m\geq6\) be composite. Then \(m=ab\) for some \(a,b\in\mathbb{Z}\). Then noticing that
+\[ a+b = a+\frac{m}{a} \leq 2 + \frac{m}{2} \leq m-1, \]
+we break the product up:
+\[ (m-1)! = \prod_{j=1}^aj\cdot\prod_{k=a+1}^{a+b}k\cdot\prod_{l=a+b+1}^{m-1}l, \]
+whence we deduce that, since \(a\) divides the first product and \(b\) divides the second product, the whole product is divisible by \(ab=m\), and so
+\[ (m-1)! \equiv_m 0.\]
+QED.</p>
+<p><strong>Corollary (Euler&rsquo;s Criterion):</strong> Let \(p\) be an odd prime and let \(a\in\mathbb{Z}\) be coprime to \(p\). Then
+\[ \begin{pmatrix}a\\ p\end{pmatrix}\equiv_p a^{(p-1)/2}. \]
+<em>Proof:</em> By Wilson&rsquo;s Theorem \((p-1)!\equiv_p -1\). So by Theorem 1,
+\[ -1 \equiv_p (p-1)! \equiv_p -\begin{pmatrix}a\\p\end{pmatrix}a^{(p-1)/2}, \]
+therefore
+\[ a^{(p-1)/2} \equiv_p \left[1\middle/ \begin{pmatrix}a\\p\end{pmatrix}\right] \equiv_p \begin{pmatrix}a\\p\end{pmatrix}.\]
+QED.</p>
+
+
+  </main>
+  </body>
+</html>
+
