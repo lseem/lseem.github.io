@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Prism Operator | Luca Seemungal</title>
+    <link rel="stylesheet" href="/css/main.css">
+    
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+  </head>
+  <body>
+    
+
+<nav>
+  <span><a href="/">Luca's Website</a></span>
+  <ul>
+    
+      <li><a href="/wiki/">Wiki</a></li>
+    
+      <li><a href="/posts/">Posts</a></li>
+    
+      <li><a href="/projects/">Projects</a></li>
+    
+      <li><a href="/resources/">Resources</a></li>
+    
+  </ul>
+</nav>
+
+
+
+
+
+<h1>The Prism Operator</h1>
+
+
+
+
+<p>tags:
+  
+  <small>
+    <a href="http://lseem.xyz/tags/maths">maths</a>
+  </small>
+  
+  <small>
+    <a href="http://lseem.xyz/tags/algebraic%20topology">algebraic topology</a>
+  </small>
+  
+  <small>
+    <a href="http://lseem.xyz/tags/algebra">algebra</a>
+  </small>
+  
+  <small>
+    <a href="http://lseem.xyz/tags/topology">topology</a>
+  </small>
+  
+  <small>
+    <a href="http://lseem.xyz/tags/homology">homology</a>
+  </small>
+  
+  <small>
+    <a href="http://lseem.xyz/tags/warwick">warwick</a>
+  </small>
+  
+  <small>
+    <a href="http://lseem.xyz/tags/homotopy%20invariance">homotopy invariance</a>
+  </small>
+  
+</p>
+
+
+<p><em>Friday, Feb 12 2021</em></p>
+
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#definition">Definition</a></li>
+    <li><a href="#lemmata">Lemmata</a></li>
+    <li><a href="#references-and-notes">References and Notes</a></li>
+  </ul>
+</nav>
+
+
+<h2 id="introduction">Introduction</h2>
+<p>The motivation for studying the prism operator comes from proving <a href="/wiki/homotopy-invariance">homotopy invariance</a>. The prism operator takes a singular n-chain and forms a singular (n+1)-chain from it by passing the n-chain through a homotopy, creating &ldquo;prisms&rdquo; in the process.</p>
+<p>As an introduction, we first study the 2-dimensional case. Let \(X\) and \(Y\) be topological spaces, \(H:X\times I\to Y\) be a homotopy, and \(\sigma:\Delta^2\to X\) be a singular 2-simplex in \(X\). We can then form a prism by passing \(\sigma\) through the homotopy:</p>
+<p>\[H\circ(\sigma\times\mathrm{id}):\Delta^2\times I\to Y.\]</p>
+<p>Now, this prism is a 3-dimensional object, and so we want to form a singular 3-chain from it. We do this by chopping up our prism into several singular 3-simplices.</p>
+<p><img src="/wiki/prism-operator-1.png" alt="3-prism"></p>
+<p>First, let&rsquo;s label the vertices of our prism: the top and bottom faces are singular 2-simplices in their own right, and so we can label the top one \([v_0,v_1,v_2]\) and the bottom one \([w_0,w_1,w_2]\). Now we can chop this prism up into three 3-simplices, and if we want our prism to have the right boundary then we add them up in the following way:</p>
+<p>\[ P(\sigma) = [v_0,w_0,w_1,w_2]-[v_0,v_1,w_1,w_2]+[v_0,v_1,v_2,w_2]. \]</p>
+<p>And so we have expressed our prism as a 3-chain, as desired.</p>
+<p>Now, let us calculate the boundary of our prism, \(P(\sigma)\). On the one hand, we can calculate it directly:</p>
+<p>\[\begin{eqnarray}
+\partial P(\sigma) &amp;=&amp; &amp;[w_0,w_1,w_2]-[v_0,w_1,w_2]+[v_0,w_0,w_2]-[v_0,w_0,w_2] \\<br>
+&amp; &amp; -&amp;[v_1,w_1,w_2]+[v_0,w_1,w_2]-[v_0,v_1,w_2]+[v_0,v_1,w_1] \\<br>
+&amp; &amp; +&amp;[v_1,v_2,w_2]-[v_0,v_2,w_2]+[v_0,v_1,w_2]-[v_0,v_1,v_2] \\<br>
+&amp;=&amp; &amp;[w_0,w_1,w_2]+[v_0,w_0,w_2]-[v_0,w_0,w_2]-[v_1,w_1,w_2] \\<br>
+&amp; &amp;+&amp;[v_0,v_1,w_1]+[v_1,v_2,w_2]-[v_0,v_2,w_2]-[v_0,v_1,v_2]. \\<br>
+\end{eqnarray}\]</p>
+<p>On the other hand, we can see from the picture that the boundary of the prism consists of the top face, the bottom face, and the sides. Using the above calculation as our guide, we see that</p>
+<p>\[ \partial P(\sigma) = [w_0,w_1,w_2]-[v_0,v_1,v_2]- (\partial\sigma)\times I. \]</p>
+<p>But look! Doesn&rsquo;t \((\partial\sigma)\times I\) look an awful lot like it <em>should</em> be \(\partial(P(\sigma))\) (visualise it!)?</p>
+<h2 id="definition">Definition</h2>
+<p>Let \(X\) and \(Y\) be topological spaces that are homotopic, via the homotopy \(H:X\times I\to Y\). Let \(\sigma=[v_0,\cdots,v_n]:\Delta^n\to X\) be a singular n-simplex in \(X\). Pass \(\sigma\) through \(H\) to give the prism
+\[H\circ(\sigma\times{\rm id}):\Delta^n\times I \to Y.\]
+Label the n-simplices \(\Delta^n\times\{0\}\to Y\) and \(\Delta^n\times\{1\}\to Y\) by \([v_0,\cdots,v_n]\) and \([w_0,\cdots,w_n]\) respectively. In this labelling, we identify \(\sigma\) with \(\Delta^n\times\{0\}\to Y\). We define the map \(\Delta_n(X) \to C_n(\Delta^n\times I)\) to be</p>
+<p>\[\begin{align}
+\sigma \mapsto &amp;[v_0,w_0,\cdots,w_n]-[v_0,v_1,w_1,\cdots,w_n] + \cdots + (-1)^n[v_0,\cdots,v_n,w_n] \\<br>
+&amp;= \sum_i (-1)^i[v_0,\cdots,v_i,w_i,\cdots,w_n].
+\end{align}
+\]</p>
+<p>Extending this map linearly to linear combinations of singular n-simplices (i.e. n-chains) in \(X\), we get the <em>prism operator</em> \(P:C_n(X)\to C_{n+1}(\Delta^n\times I)\).</p>
+<h2 id="lemmata">Lemmata</h2>
+<p>In the following lemmata, we have the general set-up that \(X\) and \(Y\) are topological spaces, \(H:X\times I\to Y\) is a homotopy between then, \(\sigma=[v_0,\cdots,v_n]:\Delta^n\to X\) is a singular n-simplex in X, and \(P(\sigma)\) is a singular (n+1)-chain in \(\Delta^n\times I\) with bottom face \(\sigma=[v_0,\cdots,v_n]:\Delta^n\times\{0\}\to Y\) and top face \([w_0,\cdots,w_n]:\Delta^n\times\{1\}\to Y\).</p>
+<p><strong>Lemma</strong>: For each face \([v_0,\cdots,\hat{v_j},\cdots,v_n]\) of \(\sigma\), we have that</p>
+<p>\[ \begin{eqnarray}
+P([v_0,\cdots,\hat{v_j},\cdots,v_n]) &amp;=&amp;\sum_{i&lt;j}(-1)^i[v_0,\cdots,v_i,w_i,\cdots,\hat{w_j},\cdots,w_n] + \\<br>
+&amp;&amp;\sum_{i&gt;j}(-1)^{i+1}[v_0,\cdots,\hat{v_j},\cdots,v_i,w_i,\cdots,w_n].\\<br>
+\end{eqnarray} \]</p>
+<p><em>Proof</em>: Under the homotopy \(H\), each face of \(\sigma\) is mapped to the corresponding face of \(\sigma\times\{1\}\), and so \(P([v_0,\cdots,\hat{v_j},\cdots,v_n]\) is the alternating sum of \([v_0,w_0,\cdots,\hat{w_j},\cdots,w_n]\), \([v_0,v_1,w_1,\cdots,\hat{w_j},\cdots,w_n]\), &hellip;, \([v_0,\cdots,\hat{v_j},\cdots,v_i,w_i,\cdots,w_n]\). This is the expression in the statement. <strong>QED</strong>.</p>
+<p><strong>Lemma</strong>: We have the formula</p>
+<p>\[ \partial P(\sigma) = [w_0,\cdots,w_n] - [v_0,\cdots,v_n] - P(\partial\sigma). \]</p>
+<p><em>Proof</em>: We go ahead and calculate, splitting the sum into two parts:</p>
+<p>\[ \begin{eqnarray}
+\partial P(\sigma)  &amp;=&amp; \partial \sum_i (-1)^i [v_0,\cdots,v_i,w_i,\cdots,w_n] \\<br>
+&amp;=&amp; \sum_{j\leq i}(-1)^{i+j}[v_0,\cdots,\hat{v_j},\cdots,v_i,w_i,\cdots,w_n] \\<br>
+&amp; &amp; +\sum_{j\geq i}(-1)^{i+j+1}[v_0,\cdots,v_i,w_i,\cdots,\hat{w_j},\cdots,w_n].
+\end{eqnarray} \]</p>
+<ul>
+<li>First we handle the terms where \(i=j\). In these terms we have a sum which admits great cancellation, leaving just the top and bottom faces of the prism:</li>
+</ul>
+<p>\[ \begin{eqnarray}
+\sum_{i=0}^n [v_0,\cdots,v_{i-1},w_i,\cdots,w_n] - \sum_{i=0}^n[v_0,\cdots,v_i,w_{i+1},\cdots,w_n] \\<br>
+= [w_0,\cdots,w_n] - [v_0,\cdots,v_n].
+\end{eqnarray} \]</p>
+<p>Now we handle the terms where \(i\neq j\). Taking inspiration from the calculations we did in the <a href="#introduction">introduction</a>, we apply the prism operator to each face \([v_0,\cdots,\hat{v_j},\cdots,v_n]\) (for \(j = 0,\cdots,n\)) of \(\sigma\) and get</p>
+<p>\[ \begin{eqnarray}
+P([v_0,\cdots,\hat{v_j},\cdots,v_n]) &amp;=&amp;\sum_{i&lt;j}(-1)^i[v_0,\cdots,v_i,w_i,\cdots,\hat{w_j},\cdots,w_n] + \\<br>
+&amp;&amp;\sum_{i&gt;j}(-1)^{i+1}[v_0,\cdots,\hat{v_j},\cdots,v_i,w_i,\cdots,w_n].\\<br>
+\end{eqnarray} \]</p>
+<p>Now, since the boundary of \(\sigma\) is the alternating sum of its faces, we have that</p>
+<p>\[ \begin{eqnarray}
+P(\partial\sigma) &amp;= &amp;P(\sum_j(-1)^j[v_0,\cdots,\hat{v_j},\cdots,v_n]) \\<br>
+&amp;= &amp;\sum_j(-1)^jP([v_0,\cdots,\hat{v_j},\cdots,v_n]) \\<br>
+&amp;= &amp;\sum_{i&lt;j}(-1)^{i+j}[v_0,\cdots,v_i,w_i,\cdots,\hat{w_j},\cdots,w_n] \\<br>
+&amp;&amp;\sum_{i&gt;j}(-1)^{i+j+1}[v_0,\cdots,\hat{v_j},\cdots,w_i,w_i,\cdots,w_n],
+\end{eqnarray}  \]</p>
+<p>which is the <em>negative</em> of the terms in the first expression in the proof for which \(i\neq j\). We therefore have that</p>
+<p>\[ \partial P(\sigma) = [w_0,\cdots,w_n]-[v_0,\cdots,v_n]-P(\partial\sigma). \]
+<strong>QED</strong>.</p>
+<h2 id="references-and-notes">References and Notes</h2>
+<ul>
+<li>This article is based on a lecture course on algebraic topology at Warwick given by Chris Lazda</li>
+</ul>
+
+
+  </main>
+  </body>
+</html>
+
