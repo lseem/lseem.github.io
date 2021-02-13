@@ -5,11 +5,11 @@
     <link>http://lseem.xyz/tags/homotopy-invariance/</link>
     <description>Recent content in homotopy invariance on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 12 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://lseem.xyz/tags/homotopy-invariance/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://lseem.xyz/tags/homotopy-invariance/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Prism Operator</title>
       <link>http://lseem.xyz/wiki/prism-operator/</link>
-      <pubDate>Fri, 12 Feb 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 13 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>http://lseem.xyz/wiki/prism-operator/</guid>
       <description>Introduction The motivation for studying the prism operator comes from proving homotopy invariance. The prism operator takes a singular n-chain and forms a singular (n+1)-chain from it by passing the n-chain through a homotopy, creating &amp;ldquo;prisms&amp;rdquo; in the process.

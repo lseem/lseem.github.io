@@ -5,11 +5,22 @@
     <link>http://lseem.xyz/tags/topology/</link>
     <description>Recent content in topology on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 12 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://lseem.xyz/tags/topology/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://lseem.xyz/tags/topology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Homotopy Invariance</title>
+      <link>http://lseem.xyz/wiki/homotopy-invariance/</link>
+      <pubDate>Sat, 13 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://lseem.xyz/wiki/homotopy-invariance/</guid>
+      <description>Introduction Homotopy invariance is a key theorem from algebraic topology. It says that if two maps are homotopic then they induce the same singular homology homomorphism. The prerequisite notions for this theorem are singular homology and the prism operator.
+Statement and Proof Theorem: Let \(X\) and \(Y\) be topological spaces. If \(f,g:X\to Y\) are homotopic, then their induced singular homology homomorphisms are equal:
+\[ f_* = g_* : H_n(X) \to H_n(Y).</description>
+    </item>
+    
     <item>
       <title>The Prism Operator</title>
       <link>http://lseem.xyz/wiki/prism-operator/</link>
-      <pubDate>Fri, 12 Feb 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 13 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>http://lseem.xyz/wiki/prism-operator/</guid>
       <description>Introduction The motivation for studying the prism operator comes from proving homotopy invariance. The prism operator takes a singular n-chain and forms a singular (n+1)-chain from it by passing the n-chain through a homotopy, creating &amp;ldquo;prisms&amp;rdquo; in the process.

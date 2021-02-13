@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Homotopy Invariance | Luca Seemungal</title>
+    <link rel="stylesheet" href="/css/main.css">
+    
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+  </head>
+  <body>
+    
+
+<nav>
+  <span><a href="/">Luca's Website</a></span>
+  <ul>
+    
+      <li><a href="/wiki/">Wiki</a></li>
+    
+      <li><a href="/posts/">Posts</a></li>
+    
+      <li><a href="/projects/">Projects</a></li>
+    
+      <li><a href="/resources/">Resources</a></li>
+    
+  </ul>
+</nav>
+
+
+
+
+
+<h1>Homotopy Invariance</h1>
+
+
+
+
+<p>tags:
+  
+  <small>
+    <a href="http://lseem.xyz/tags/maths">maths</a>
+  </small>
+  
+  <small>
+    <a href="http://lseem.xyz/tags/algebraic%20topology">algebraic topology</a>
+  </small>
+  
+  <small>
+    <a href="http://lseem.xyz/tags/algebra">algebra</a>
+  </small>
+  
+  <small>
+    <a href="http://lseem.xyz/tags/topology">topology</a>
+  </small>
+  
+  <small>
+    <a href="http://lseem.xyz/tags/homology">homology</a>
+  </small>
+  
+  <small>
+    <a href="http://lseem.xyz/tags/warwick">warwick</a>
+  </small>
+  
+</p>
+
+
+<p><em>Saturday, Feb 13 2021</em></p>
+
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#statement-and-proof">Statement and Proof</a></li>
+    <li><a href="#references-and-notes">References and Notes</a></li>
+  </ul>
+</nav>
+
+
+<h2 id="introduction">Introduction</h2>
+<p>Homotopy invariance is a key theorem from algebraic topology. It says that if two maps are homotopic then they induce the same singular homology homomorphism. The prerequisite notions for this theorem are <a href="/wiki/singular-homology">singular homology</a> and <a href="/wiki/prism-operator">the prism operator</a>.</p>
+<h2 id="statement-and-proof">Statement and Proof</h2>
+<p><strong>Theorem</strong>: Let \(X\) and \(Y\) be topological spaces. If \(f,g:X\to Y\) are homotopic, then their induced singular homology homomorphisms are equal:</p>
+<p>\[ f_* = g_* : H_n(X) \to H_n(Y). \]</p>
+<p><em>Proof</em>: Let \(H:X\times I\to Y\) be the homotopy between \(f\) and \(g\). Define \(P:C_n(X)\to C_{n+1}(Y)\) to be the <a href="/wiki/prism-operator/">prism operator</a>. Then since \(H\circ(\sigma\times{\rm id})|_{\Delta\times\{1\}}=g\circ\sigma=[w_0,\cdots,w_n]\) and \(H\circ(\sigma\times{\rm id})|_{\Delta\times\{0\}}=f\circ\sigma=[v_0,\cdots,v_n]\), we have</p>
+<p>\[ \partial P(\sigma) = g_*(\sigma) - f_*(\sigma) - P(\partial\sigma). \]</p>
+<p>Therefore for if \(\sigma\in Z_n(X)\) then \(\partial\sigma=0\) and so</p>
+<p>\[ g_*(\sigma) - f_*(\sigma) = \partial P(\sigma), \]</p>
+<p>i.e. \( g_*(\sigma) \) and \( f_*(\sigma) \) differ by a boundary, and so passing to the quotient \( H_n(X) = Z_n(X)/B_n(X) \) we have \( g_*(\sigma) = f_*(\sigma) \).</p>
+<p><strong>QED.</strong></p>
+<h2 id="references-and-notes">References and Notes</h2>
+<ul>
+<li>This article is based on a lecture course on algebraic topology given at Warwick by Chris Lazda.</li>
+</ul>
+
+
+  </main>
+  </body>
+</html>
+
