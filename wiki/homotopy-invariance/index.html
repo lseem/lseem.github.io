@@ -73,6 +73,7 @@
   <ul>
     <li><a href="#introduction">Introduction</a></li>
     <li><a href="#statement-and-proof">Statement and Proof</a></li>
+    <li><a href="#consequences">Consequences</a></li>
     <li><a href="#references-and-notes">References and Notes</a></li>
   </ul>
 </nav>
@@ -88,6 +89,23 @@
 <p>Therefore for if \(\sigma\in Z_n(X)\) then \(\partial\sigma=0\) and so</p>
 <p>\[ g_*(\sigma) - f_*(\sigma) = \partial P(\sigma), \]</p>
 <p>i.e. \( g_*(\sigma) \) and \( f_*(\sigma) \) differ by a boundary, and so passing to the quotient \( H_n(X) = Z_n(X)/B_n(X) \) we have \( g_*(\sigma) = f_*(\sigma) \).</p>
+<p><strong>QED.</strong></p>
+<h2 id="consequences">Consequences</h2>
+<p><strong>Corollary</strong>: If \(X\) and \(Y\) are homotopy equivalent then \(H_n(X)\cong H_n(Y)\) for all \(n\).</p>
+<p><em>Proof</em>: \(X\) and \(Y\) being homotopy equivalent means exactly that there are maps \(f:X\to Y\) and \(g:Y\to X\) such that \(gf\simeq{\rm id}<em>X\) and \(fg\simeq{\rm id}<em>Y\). Now, we have the induced homomorphisms \(f</em>*:H_n(X)\to H_n(Y)\) and \(g</em>*:H_n(Y)\to H_n(X)\).</p>
+<p>By homotopy equivalence (the above theorem), we have that</p>
+<p>\[g_*f_* = (gf)_* = ({\rm id}_X)_* = {\rm id}_{H_n(X)}\]
+\[f_*g_* = (fg)_* = ({\rm id}_Y)_* = {\rm id}_{H_n(Y)}.\]</p>
+<p>So \(f_*\) and \(g_*\) are inverses of each other, and so they are both group isomorphisms. So \(H_n(X)\cong H_n(Y)\).</p>
+<p><strong>QED.</strong></p>
+<p><strong>Corollary</strong>: If \(X\) is contractible, then</p>
+<p>\[ H_n(X) =
+\begin{cases}
+\mathbb{Z} &amp; n=0 \\<br>
+0 &amp; n&gt;0.
+\end{cases}
+\]</p>
+<p><em>Proof</em>: \(X\) being contractible means exactly that \(X\) is homotopy equivalent to a point, and by the above corollary their homology groups are equal, which yields the desired result.</p>
 <p><strong>QED.</strong></p>
 <h2 id="references-and-notes">References and Notes</h2>
 <ul>

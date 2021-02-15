@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Chain Complex | Luca Seemungal</title>
+    <title>Chain Map | Luca Seemungal</title>
     <link rel="stylesheet" href="/css/main.css">
     
     <script id="MathJax-script" async
@@ -31,7 +31,7 @@
 
 
 
-<h1>Chain Complex</h1>
+<h1>Chain Map</h1>
 
 
 
@@ -73,18 +73,23 @@
   <ul>
     <li><a href="#introduction">Introduction</a></li>
     <li><a href="#definitions">Definitions</a></li>
+    <li><a href="#lemmata">Lemmata</a></li>
     <li><a href="#references-and-notes">References and Notes</a></li>
   </ul>
 </nav>
 
 
 <h2 id="introduction">Introduction</h2>
-<p><img src="/wiki/chain-complex-1.png" alt="chain complex"></p>
+<p><img src="/wiki/chain-map-1.png" alt="chain map"></p>
 <h2 id="definitions">Definitions</h2>
-<p>A <em>chain complex</em> is a sequence of abelian groups \( C_n \) (one for each \( n\in\mathbb{Z} \)) together with maps \( d_n:C_n\to C_{n-1} \) called *differentials* such that \( d_nd_{n+1}=0 \) for every \( n\in\mathbb{Z} \).</p>
-<p>We define the <em>group of n-cycles</em> \(Z_n(C_\bullet) := \ker(d_n:C_n\to C_{n-1})\), and we define the *group of n-boundaries* \(B_n(C_\bullet) := {\rm im}(d_{n+1}:C_{n+1}\to C_n)\).</p>
-<p>Since \(d^2=0\), \(B_n\subset Z_n\). This permits us to define the <em>n-homology group</em> to be the quotient</p>
-<p>\[ H_n(C_\bullet) := \frac{Z_n(C_\bullet)}{B_n(C_\bullet)} = \frac{{\rm im}(d:C_{n+1}\to C_n)}{\ker(d_n:C_n\to C_{n-1})}. \]</p>
+<p>Let \(C_\bullet\) and \(D_\bullet\) be <a href="/wiki/chain-complex/">chain complexes</a>. A *chain map* from \(C_\bullet\) to \(D_\bullet\) is a collection of homomorphisms \( f_n:C_n\to D_n \) such that \(d_nf_n=f_{n-1}d_n:C_n\to D_{n-1}\) for all \(n\in\mathbb{Z}\).</p>
+<p>In other words, a chain map is a collection of homomorphisms such that each square in the above diagram commutes.</p>
+<h2 id="lemmata">Lemmata</h2>
+<p><strong>Lemma</strong>: A chain map \(f_\bullet:C_\bullet\to D_\bullet\) induces homomorphisms \(f_n:H_n(C_\bullet)\to H_n(D_\bullet)\) in homology, for all \(n\in\mathbb{Z}\).</p>
+<p><em>Proof</em>: Think about it for a moment; any element in \(H_n(C_\bullet)\) can be represented by \(\sigma + {\rm im}(d_{n+1}^C)\) where \(\sigma\in C_n\). Then the map
+\[ \sigma + {\rm im}(d_{n+1}^C) \in H_n(C_\bullet)\overset{f_*}{\longrightarrow} H_n(D_\bullet)\ni f(\sigma) + {\rm im}(d_{n+1}^D) \]
+is a homomorphism - you can check it for yourself. This is exactly the induced homomorphism \(f_*:H_n(C_\bullet)\to H_n(D_\bullet)\).</p>
+<p><strong>QED.</strong></p>
 <h2 id="references-and-notes">References and Notes</h2>
 <ul>
 <li>This article is based on a lecture course on algebraic topology given at Warwick by Chris Lazda.</li>

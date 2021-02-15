@@ -7,7 +7,8 @@ a::before { content: "["; }
 a::after { content: "]"; }
 
 img {
-  height: 200pt;
+  max-width: 560pt;
+  max-height: 200pt;
   display: block;
   margin-left: auto;
   margin-right: auto;

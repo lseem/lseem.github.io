@@ -12,8 +12,21 @@
       <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>http://lseem.xyz/wiki/chain-complex/</guid>
-      <description>Introduction Definition A chain complex is a sequence of abelian groups \( C_n \) (one for each \( n\in\mathbb{Z} \)) together with maps \( d_n:C_n\to C_{n-1} \) called *differentials* such that \( d_nd_{n+1}=0 \) for every \( n\in\mathbb{Z} \).
-Lemmata References and Notes  This article is based on a lecture course on algebraic topology given at Warwick by Chris Lazda.  </description>
+      <description>Introduction Definitions A chain complex is a sequence of abelian groups \( C_n \) (one for each \( n\in\mathbb{Z} \)) together with maps \( d_n:C_n\to C_{n-1} \) called *differentials* such that \( d_nd_{n+1}=0 \) for every \( n\in\mathbb{Z} \).
+We define the group of n-cycles \(Z_n(C_\bullet) := \ker(d_n:C_n\to C_{n-1})\), and we define the *group of n-boundaries* \(B_n(C_\bullet) := {\rm im}(d_{n+1}:C_{n+1}\to C_n)\).
+Since \(d^2=0\), \(B_n\subset Z_n\). This permits us to define the n-homology group to be the quotient</description>
+    </item>
+    
+    <item>
+      <title>Chain Map</title>
+      <link>http://lseem.xyz/wiki/chain-map/</link>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://lseem.xyz/wiki/chain-map/</guid>
+      <description>Introduction Definitions Let \(C_\bullet\) and \(D_\bullet\) be chain complexes. A *chain map* from \(C_\bullet\) to \(D_\bullet\) is a collection of homomorphisms \( f_n:C_n\to D_n \) such that \(d_nf_n=f_{n-1}d_n:C_n\to D_{n-1}\) for all \(n\in\mathbb{Z}\).
+In other words, a chain map is a collection of homomorphisms such that each square in the above diagram commutes.
+Lemmata Lemma: A chain map \(f_\bullet:C_\bullet\to D_\bullet\) induces homomorphisms \(f_n:H_n(C_\bullet)\to H_n(D_\bullet)\) in homology, for all \(n\in\mathbb{Z}\).
+Proof: Think about it for a moment; any element in \(H_n(C_\bullet)\) can be represented by \(\sigma + {\rm im}(d_{n+1}^C)\) where \(\sigma\in C_n\).</description>
     </item>
     
     <item>

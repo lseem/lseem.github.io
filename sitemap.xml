@@ -18,7 +18,17 @@
   </url>
   
   <url>
+    <loc>http://lseem.xyz/wiki/chain-map/</loc>
+    <lastmod>2021-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://lseem.xyz/</loc>
+    <lastmod>2021-02-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://lseem.xyz/tags/homology/</loc>
     <lastmod>2021-02-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -49,11 +59,6 @@
   
   <url>
     <loc>http://lseem.xyz/wiki/chain-homotopy/</loc>
-    <lastmod>2021-02-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://lseem.xyz/tags/homology/</loc>
     <lastmod>2021-02-13T00:00:00+00:00</lastmod>
   </url>
   
