@@ -7,6 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 13 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://lseem.xyz/tags/homology/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Chain Homotopy</title>
+      <link>http://lseem.xyz/wiki/chain-homotopy/</link>
+      <pubDate>Sat, 13 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://lseem.xyz/wiki/chain-homotopy/</guid>
+      <description>Introduction The motivation for the concept of a chain homotopy is to abstract the prism operator to a more algebraic setting.
+Note that this diagram is not a &amp;ldquo;commutative diagram&amp;rdquo;, but since \(f\) and \(g\) are chain maps, there are two commutative &amp;ldquo;sub&amp;rdquo;-diagrams.
+Definition If \(C_\bullet\) and \(D_\bullet\) are chain complexes, and \(f,g:C_\bullet\to D_\bullet\) are chain maps, then a *chain homotopy* from \(f\) to \(g\) is a colleciton of homomorphisms \(P:C_n\to D_{n+1}\) such that for all \(n\),</description>
+    </item>
+    
+    <item>
       <title>Homotopy Invariance</title>
       <link>http://lseem.xyz/wiki/homotopy-invariance/</link>
       <pubDate>Sat, 13 Feb 2021 00:00:00 +0000</pubDate>

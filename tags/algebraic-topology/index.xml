@@ -5,7 +5,28 @@
     <link>http://lseem.xyz/tags/algebraic-topology/</link>
     <description>Recent content in algebraic topology on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 13 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://lseem.xyz/tags/algebraic-topology/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://lseem.xyz/tags/algebraic-topology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chain Complex</title>
+      <link>http://lseem.xyz/wiki/chain-complex/</link>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://lseem.xyz/wiki/chain-complex/</guid>
+      <description>Introduction Definition A chain complex is a sequence of abelian groups \( C_n \) (one for each \( n\in\mathbb{Z} \)) together with maps \( d_n:C_n\to C_{n-1} \) called *differentials* such that \( d_nd_{n+1}=0 \) for every \( n\in\mathbb{Z} \).
+Lemmata References and Notes  This article is based on a lecture course on algebraic topology given at Warwick by Chris Lazda.  </description>
+    </item>
+    
+    <item>
+      <title>Chain Homotopy</title>
+      <link>http://lseem.xyz/wiki/chain-homotopy/</link>
+      <pubDate>Sat, 13 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://lseem.xyz/wiki/chain-homotopy/</guid>
+      <description>Introduction The motivation for the concept of a chain homotopy is to abstract the prism operator to a more algebraic setting.
+Note that this diagram is not a &amp;ldquo;commutative diagram&amp;rdquo;, but since \(f\) and \(g\) are chain maps, there are two commutative &amp;ldquo;sub&amp;rdquo;-diagrams.
+Definition If \(C_\bullet\) and \(D_\bullet\) are chain complexes, and \(f,g:C_\bullet\to D_\bullet\) are chain maps, then a *chain homotopy* from \(f\) to \(g\) is a colleciton of homomorphisms \(P:C_n\to D_{n+1}\) such that for all \(n\),</description>
+    </item>
+    
     <item>
       <title>Homotopy Invariance</title>
       <link>http://lseem.xyz/wiki/homotopy-invariance/</link>
