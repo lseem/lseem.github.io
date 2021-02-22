@@ -11,8 +11,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://lseem.xyz/projects/second-year-essay/</guid>
-      <description>{{ .Date := 0 }}
-In my second year I wrote The Isoperimetric Problem: Geometry and Analysis and I guess I&amp;rsquo;m quite proud of it. I think the markers didn&amp;rsquo;t like the fact that I didn&amp;rsquo;t provide pin-point references, so sorry! Although, below is a list of some references which I think you might want to take a look at:
+      <description>In my second year I wrote The Isoperimetric Problem: Geometry and Analysis and I guess I&amp;rsquo;m quite proud of it. I think the markers didn&amp;rsquo;t like the fact that I didn&amp;rsquo;t provide pin-point references, so sorry! Although, below is a list of some references which I think you might want to take a look at:
  Felix Bernstein. “Über die isoperimetrische Eigenschaft des Kreises auf der Kugeloberfläche und in der Ebene”.</description>
     </item>
     
@@ -22,7 +21,8 @@ In my second year I wrote The Isoperimetric Problem: Geometry and Analysis and I
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://lseem.xyz/projects/summer-research-project/</guid>
-      <description>Over the summer I did a project in free boundary minimal annuli in the unit ball. Specifically, I studied an object called the critical catenoid, which is the only known example of a free boundary minimal annulus in the unit ball. I made a poster. </description>
+      <description>Over the summer I did a project in free boundary minimal annuli in the unit ball. Specifically, I studied an object called the critical catenoid, which is the only known example of a free boundary minimal annulus in the unit ball. I made a poster.
+This is an image I made of the critical catenoid with POV-Ray. I can&amp;rsquo;t seem to get the lighting or material just how I want it.</description>
     </item>
     
   </channel>
