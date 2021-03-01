@@ -5,7 +5,11 @@
     <link>http://lseem.xyz/tags/coding/</link>
     <description>Recent content in coding on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 01 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://lseem.xyz/tags/coding/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://lseem.xyz/tags/coding/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Ray Tracing in \(S^3\) or \(H^3\) (or more general 3-Manifolds?)</title>
       <link>http://lseem.xyz/posts/ray-tracing-in-s3-or-h3-or-more-general-3-manifolds/</link>

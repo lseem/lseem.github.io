@@ -5,7 +5,34 @@
     <link>http://lseem.xyz/wiki/</link>
     <description>Recent content in Wiki on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 15 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://lseem.xyz/wiki/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Feb 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://lseem.xyz/wiki/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Important Theoremata of Undergraduate Mathematics</title>
+      <link>http://lseem.xyz/wiki/important-theoremata-undergraduate-mathematics/</link>
+      <pubDate>Tue, 23 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://lseem.xyz/wiki/important-theoremata-undergraduate-mathematics/</guid>
+      <description>Introduction In this overview article, I list some theoremata that I think should summarise an undergraduate mathematics degree.
+Often, I can get overwhelmed by the details of a course, and so I find it useful to just sit down and list the main results. Usually, they only take up half a page. Then, I focus on figuring out the proofs of these main results, and that&amp;rsquo;s pretty much all I need to know for the course: there&amp;rsquo;s no need to actively try to remember the definition of some obscure object, because chances are it&amp;rsquo;s been defined just to be able to prove a theorem (there are some important definitions, but I&amp;rsquo;ll probably end up remembering them just by the sheer number of times I use them while learning the subject).</description>
+    </item>
+    
+    <item>
+      <title>Exact Sequence</title>
+      <link>http://lseem.xyz/wiki/exact-sequence/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://lseem.xyz/wiki/exact-sequence/</guid>
+      <description>Introduction The motivation for this algebraic structure comes from abstracting out important features of the Mayer-Vietoris exact sequence.
+Definitions A sequence of abelian groups and homomorphisms
+\[ A_n \overset{d_n}{\longrightarrow} \cdots \longrightarrow A_{i+1} \overset{d_{i+1}}{\longrightarrow} A_i \overset{d_i}{\longrightarrow} A_{i-1} \longrightarrow \cdots \overset{d_1}{\longrightarrow} A_0 \]
+is exact at \(A_i\) if \(\ker d_i = {\rm im}d_{i+1}\). This only makes sense for \(0&amp;lt;i&amp;lt;n\).
+We say that the above sequence is exact if it is exact at \(A_i\) for all \(0&amp;lt;i&amp;lt;n\).</description>
+    </item>
+    
     <item>
       <title>Chain Complex</title>
       <link>http://lseem.xyz/wiki/chain-complex/</link>
