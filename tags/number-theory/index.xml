@@ -5,11 +5,7 @@
     <link>http://lseem.xyz/tags/number-theory/</link>
     <description>Recent content in number-theory on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 08 Jun 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://lseem.xyz/tags/number-theory/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 08 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://lseem.xyz/tags/number-theory/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Towards Quadratic Reciprocity</title>
       <link>http://lseem.xyz/posts/towards-quadratic-reciprocity-2-eulers-criterion/</link>
@@ -29,7 +25,7 @@ Definition (quadratic residue): Let \(m\in\mathbb{N}\), and let \(a\in\mathbb{Z}
       <guid>http://lseem.xyz/posts/towards-quadratic-reciprocity-1-two-square-roots/</guid>
       <description>TODO: Migrate to wiki
 (NB: This post was uploaded well after the exam, as these count as my own notes and wished to use them for the open book exam.)
-I have a number theory exam coming up, and I really need to understand the famous Law of Quadratic Reciprocity. In the following series of blogposts, I will outline a proof of this Law, beginning with the Two Square Roots Lemma, then moving on to Euler&amp;rsquo;s Criterion (which we derive as a corollary of a more general theorem), after which we shall prove Gauss&amp;rsquo; Lemma (one of his many&amp;hellip;), and then finally arrive at the Law.</description>
+I have a number theory exam coming up, and I really need to understand the famous Law of Quadratic Reciprocity. In the following series of blogposts, I will outline a proof of this Law, beginning with the Two Square Roots Lemma, then moving on to Euler&amp;rsquo;s Criterion (which we derive as a corollary of a more general theorem), after which we shall prove Gauss&#39; Lemma (one of his many&amp;hellip;), and then finally arrive at the Law.</description>
     </item>
     
   </channel>

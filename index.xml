@@ -5,10 +5,17 @@
     <link>http://lseem.xyz/</link>
     <description>Recent content in Home on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 23 Feb 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://lseem.xyz/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Wed, 03 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://lseem.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Algebraic Topology</title>
+      <link>http://lseem.xyz/wiki/algebraic-topology/</link>
+      <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://lseem.xyz/wiki/algebraic-topology/</guid>
+      <description>Introduction This is an overview article for algebraic topology.
+Typical Undergraduate Course A typical undergraduate course in algebraic topology will consist of the following topics:
+ simplicial homology (broken link) singular homology (broken link)  homotopy invariance mayer vietoris (broken link) relative homology (broken link) reduced homology    References and Notes  This article is based on a lecture course on algebraic topology given at Warwick by Chris Lazda.</description>
+    </item>
     
     <item>
       <title>Important Theoremata of Undergraduate Mathematics</title>
@@ -107,7 +114,7 @@ Definition (quadratic residue): Let \(m\in\mathbb{N}\), and let \(a\in\mathbb{Z}
       <guid>http://lseem.xyz/posts/towards-quadratic-reciprocity-1-two-square-roots/</guid>
       <description>TODO: Migrate to wiki
 (NB: This post was uploaded well after the exam, as these count as my own notes and wished to use them for the open book exam.)
-I have a number theory exam coming up, and I really need to understand the famous Law of Quadratic Reciprocity. In the following series of blogposts, I will outline a proof of this Law, beginning with the Two Square Roots Lemma, then moving on to Euler&amp;rsquo;s Criterion (which we derive as a corollary of a more general theorem), after which we shall prove Gauss&amp;rsquo; Lemma (one of his many&amp;hellip;), and then finally arrive at the Law.</description>
+I have a number theory exam coming up, and I really need to understand the famous Law of Quadratic Reciprocity. In the following series of blogposts, I will outline a proof of this Law, beginning with the Two Square Roots Lemma, then moving on to Euler&amp;rsquo;s Criterion (which we derive as a corollary of a more general theorem), after which we shall prove Gauss&#39; Lemma (one of his many&amp;hellip;), and then finally arrive at the Law.</description>
     </item>
     
     <item>
