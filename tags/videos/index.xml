@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>videos on </title>
+    <link>http://lseem.xyz/tags/videos/</link>
+    <description>Recent content in videos on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 14 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://lseem.xyz/tags/videos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Revision Videos for Multivariable Calculus at Warwick</title>
+      <link>http://lseem.xyz/posts/revision-videos-for-multivariable-calculus-at-warwick/</link>
+      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://lseem.xyz/posts/revision-videos-for-multivariable-calculus-at-warwick/</guid>
+      <description>I have in the past few days uploaded some revision videos for the Multivariable Calculus course at Warwick (2020 &amp;ndash; 2021) taught by Mario Micallef. You can find them under Resources. Currently, they contain references to &amp;ldquo;the notes&amp;rdquo;. I may update them at some later point, removing all such references.
+The point of the videos is not to go over the rigour and the proofs, but to give a higher level and intuitive view of the course.</description>
+    </item>
+    
+  </channel>
+</rss>

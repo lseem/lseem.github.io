@@ -5,7 +5,17 @@
     <link>http://lseem.xyz/posts/</link>
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 08 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://lseem.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://lseem.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Revision Videos for Multivariable Calculus at Warwick</title>
+      <link>http://lseem.xyz/posts/revision-videos-for-multivariable-calculus-at-warwick/</link>
+      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://lseem.xyz/posts/revision-videos-for-multivariable-calculus-at-warwick/</guid>
+      <description>I have in the past few days uploaded some revision videos for the Multivariable Calculus course at Warwick (2020 &amp;ndash; 2021) taught by Mario Micallef. You can find them under Resources. Currently, they contain references to &amp;ldquo;the notes&amp;rdquo;. I may update them at some later point, removing all such references.
+The point of the videos is not to go over the rigour and the proofs, but to give a higher level and intuitive view of the course.</description>
+    </item>
+    
     <item>
       <title>Towards Quadratic Reciprocity</title>
       <link>http://lseem.xyz/posts/towards-quadratic-reciprocity-2-eulers-criterion/</link>

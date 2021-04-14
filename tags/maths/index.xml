@@ -5,7 +5,17 @@
     <link>http://lseem.xyz/tags/maths/</link>
     <description>Recent content in maths on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 03 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://lseem.xyz/tags/maths/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://lseem.xyz/tags/maths/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Revision Videos for Multivariable Calculus at Warwick</title>
+      <link>http://lseem.xyz/posts/revision-videos-for-multivariable-calculus-at-warwick/</link>
+      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://lseem.xyz/posts/revision-videos-for-multivariable-calculus-at-warwick/</guid>
+      <description>I have in the past few days uploaded some revision videos for the Multivariable Calculus course at Warwick (2020 &amp;ndash; 2021) taught by Mario Micallef. You can find them under Resources. Currently, they contain references to &amp;ldquo;the notes&amp;rdquo;. I may update them at some later point, removing all such references.
+The point of the videos is not to go over the rigour and the proofs, but to give a higher level and intuitive view of the course.</description>
+    </item>
+    
     <item>
       <title>Algebraic Topology</title>
       <link>http://lseem.xyz/wiki/algebraic-topology/</link>
@@ -14,7 +24,17 @@
       <guid>http://lseem.xyz/wiki/algebraic-topology/</guid>
       <description>Introduction This is an overview article for algebraic topology.
 Typical Undergraduate Course A typical undergraduate course in algebraic topology will consist of the following topics:
- simplicial homology (broken link) singular homology (broken link)  homotopy invariance mayer vietoris (broken link) relative homology (broken link) reduced homology    References and Notes  This article is based on a lecture course on algebraic topology given at Warwick by Chris Lazda.</description>
+ simplicial homology (broken link) singular homology (broken link)  homotopy invariance mayer vietoris (broken link) relative homology reduced homology (broken link)    References and Notes  This article is based on a lecture course on algebraic topology given at Warwick by Chris Lazda.</description>
+    </item>
+    
+    <item>
+      <title>Relative Homology</title>
+      <link>http://lseem.xyz/wiki/relative-homology/</link>
+      <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://lseem.xyz/wiki/relative-homology/</guid>
+      <description>Introduction Let \(X\) be a topological space and let \(A\subset X\). Intuitively, the relative homology of \(A\) in \(X\) is the &amp;ldquo;homology where we don&amp;rsquo;t care about what happens in A&amp;rdquo;.
+Definitions Let \(X\) be a topological space and \(A\subset X\). Then the group of \(n\)-cycles in \(A\) is a subgroup of the group of \(n\)-cycles in \(X\). Therefore the boundary map \(\partial:C_n(X)\to C_{n-1}(X)\) descends to a map on the quotients</description>
     </item>
     
     <item>
