@@ -2,49 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://lseem.xyz/tags/analysis/</loc>
-    <lastmod>2021-04-15T00:00:00+00:00</lastmod>
+    <loc>http://lseem.xyz/categories/</loc>
   </url><url>
     <loc>http://lseem.xyz/</loc>
-    <lastmod>2021-04-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://lseem.xyz/tags/maths/</loc>
-    <lastmod>2021-04-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://lseem.xyz/posts/new-videos-on-tangent-spaces-and-submanifolds/</loc>
-    <lastmod>2021-04-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://lseem.xyz/posts/</loc>
-    <lastmod>2021-04-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://lseem.xyz/tags/</loc>
-    <lastmod>2021-04-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://lseem.xyz/tags/videos/</loc>
-    <lastmod>2021-04-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://lseem.xyz/tags/warwick/</loc>
-    <lastmod>2021-04-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://lseem.xyz/posts/revision-videos-for-multivariable-calculus-at-warwick/</loc>
-    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://lseem.xyz/tags/number-theory/</loc>
-    <lastmod>2020-06-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://lseem.xyz/posts/towards-quadratic-reciprocity-2-eulers-criterion/</loc>
-    <lastmod>2020-06-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://lseem.xyz/posts/towards-quadratic-reciprocity-1-two-square-roots/</loc>
-    <lastmod>2020-06-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://lseem.xyz/tags/coding/</loc>
-    <lastmod>2020-05-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://lseem.xyz/posts/ray-tracing-in-s3-or-h3-or-more-general-3-manifolds/</loc>
-    <lastmod>2020-05-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://lseem.xyz/categories/</loc>
   </url><url>
     <loc>http://lseem.xyz/projects/</loc>
   </url><url>
@@ -53,5 +13,7 @@
     <loc>http://lseem.xyz/projects/second-year-essay/</loc>
   </url><url>
     <loc>http://lseem.xyz/projects/summer-research-project/</loc>
+  </url><url>
+    <loc>http://lseem.xyz/tags/</loc>
   </url>
 </urlset>
