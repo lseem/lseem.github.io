@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>maths on </title>
-    <link>http://lseem.xyz/tags/maths/</link>
-    <description>Recent content in maths on </description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="http://lseem.xyz/tags/maths/index.xml" rel="self" type="application/rss+xml" />
+    <title>physics on </title>
+    <link>http://lseem.xyz/tags/physics/</link>
+    <description>Recent content in physics on </description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="http://lseem.xyz/tags/physics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Nice and Satisfying Way to Look at Connections</title>
       <link>http://lseem.xyz/articles/a-nice-and-satisfying-way-to-look-at-connections/</link>

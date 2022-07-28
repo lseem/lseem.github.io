@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://lseem.xyz/articles/a-nice-and-satisfying-way-to-look-at-connections/</loc>
+  </url><url>
+    <loc>http://lseem.xyz/articles/</loc>
+  </url><url>
     <loc>http://lseem.xyz/categories/</loc>
   </url><url>
+    <loc>http://lseem.xyz/tags/differential-geometry/</loc>
+  </url><url>
+    <loc>http://lseem.xyz/tags/gauge-theory/</loc>
+  </url><url>
+    <loc>http://lseem.xyz/tags/geometry/</loc>
+  </url><url>
     <loc>http://lseem.xyz/</loc>
+  </url><url>
+    <loc>http://lseem.xyz/tags/maths/</loc>
+  </url><url>
+    <loc>http://lseem.xyz/tags/physics/</loc>
   </url><url>
     <loc>http://lseem.xyz/projects/</loc>
   </url><url>

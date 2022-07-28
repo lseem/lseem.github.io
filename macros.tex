@@ -1,0 +1,114 @@
+\usepackage{amsthm}
+\usepackage{amsmath}	% ams macros
+\usepackage{amssymb}	% ams symbols, contains amsfonts
+\usepackage{parskip}	% space between paragraphs
+\usepackage{graphicx}	% include images
+\usepackage{hyperref}	% clickable links
+\usepackage{setspace}
+\usepackage{slashed}
+\usepackage[backend=biber,style=alphabetic,citestyle=alphabetic]{biblatex}
+\addbibresource{biblio.bib}
+%CAREFUL: changing font here
+\usepackage{fontspec}
+%\setmainfont{Helvetica Neue}
+%\setmainfont{Times New Roman}
+\usepackage{xcolor} %comment and todo commands
+
+\newcommand{\ie}{\textit{i.e.}}
+\newcommand{\etc}{\textit{etc}}
+
+\renewcommand{\cal}[1]{\mathcal{#1}}
+
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\ga}{\gamma}
+\newcommand{\e}{\epsilon}
+\newcommand{\z}{\zeta}
+\newcommand{\h}{\eta}
+\newcommand{\et}{\eta}
+\newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda}
+\newcommand{\si}{\sigma}
+\renewcommand{\t}{\tau}
+\newcommand{\om}{\omega}
+\newcommand{\w}{\omega}
+\newcommand{\Om}{\Omega}
+
+\renewcommand{\C}{\ensuremath{\mathbb{C}}}
+\renewcommand{\H}{\ensuremath{\mathbb{H}}}
+\newcommand{\K}{\ensuremath{\mathbb{R}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\CP}{\ensuremath{\mathbb{CP}}}
+\newcommand{\RP}{\ensuremath{\mathbb{RP}}}
+
+\newcommand{\Cinfty}{\ensuremath{\C_\infty}}
+
+\DeclareMathOperator{\esup}{ess\,sup}
+
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\Alt}{Alt}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Ad}{Ad}
+%\DeclareMathOperator{\Im}{Im}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Trace}{Trace}
+\DeclareMathOperator{\interior}{int}
+\newcommand{\Id}{\mathop{\mathrm{Id}}}
+\newcommand{\Cl}{\mathrm{Cl}}
+\newcommand{\Mat}{\mathrm{Mat}}
+\renewcommand{\O}{\mathrm{O}}
+\renewcommand{\U}{\mathrm{U}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\gl}{\mathfrak{gl}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\so}{\mathfrak{so}}
+\newcommand{\Sp}{\mathrm{Sp}}
+\newcommand{\Spin}{\mathrm{Spin}}
+\newcommand{\spin}{\mathfrak{spin}}
+\newcommand{\Pin}{\mathrm{Pin}}
+\newcommand{\Spinc}{\ensuremath{\mathrm{Spin}^c}}
+
+%TODO: fix this
+\newcommand{\Wedge}{\La}
+\newcommand{\T}{\mathcal{T}}
+
+\newcommand{\length}{\mathrm{length}}
+
+\newcommand{\conj}[1]{\overline{#1}}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\otni}{\hookleftarrow}
+\renewcommand{\empty}{\emptyset}
+\newcommand{\oneover}[1]{\frac{1}{#1}}
+\newcommand{\piover}[1]{\frac{\pi}{#1}}
+\newcommand{\overnpi}[2]{\frac{#1}{#2\pi}}
+
+
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+\newcommand{\inner}[1]{\left\langle #1 \right\rangle}
+\newcommand{\tensor}{\otimes}
+
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\pd}{\partial}
+\newcommand{\deriv}[2]{\frac{\mathrm{d}{#1}}{\mathrm{d}{#2}}}
+\newcommand{\pderiv}[2]{\frac{\partial{#1}}{\partial{#2}}}
+\newcommand{\del}{\ensuremath{\nabla}}
+\newcommand{\dirac}{\ensuremath{\slashed{\partial}}}
+
+\newcommand{\integ}[4]{\int_{#1}^{#2}{#3}\d{#4}}
+
+\newcommand{\todo}[1]{{\color{red}#1}}
+\newcommand{\comment}[1]{{\color{orange}#1}}
+\newcommand{\hint}[1]{{\color{blue}\textit{Hint:} #1}}
+
+%newtheorem{prop}{Proposition}[chapter]
+%newtheorem{lemma}[prop]{Lemma}
+%\newtheorem{theorem}[prop]{Theorem}
+%\newtheorem{defn}[prop]{Definition}
+%\newtheorem{remark}[prop]{Remark}
+%\newtheorem{eg}[prop]{Example}
+%\newtheorem{ex}{}[section]

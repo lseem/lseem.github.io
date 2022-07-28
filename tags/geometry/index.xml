@@ -4,17 +4,15 @@
     <title>geometry on </title>
     <link>http://lseem.xyz/tags/geometry/</link>
     <description>Recent content in geometry on </description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 03 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://lseem.xyz/tags/geometry/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="http://lseem.xyz/tags/geometry/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Algebraic Topology</title>
-      <link>http://lseem.xyz/wiki/algebraic-topology/</link>
-      <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
+      <title>A Nice and Satisfying Way to Look at Connections</title>
+      <link>http://lseem.xyz/articles/a-nice-and-satisfying-way-to-look-at-connections/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://lseem.xyz/wiki/algebraic-topology/</guid>
-      <description>Introduction This is an overview article for algebraic topology.
-Typical Undergraduate Course A typical undergraduate course in algebraic topology will consist of the following topics:
- simplicial homology (broken link) singular homology (broken link)  homotopy invariance mayer vietoris (broken link) relative homology reduced homology (broken link)    References and Notes  This article is based on a lecture course on algebraic topology given at Warwick by Chris Lazda.</description>
+      <guid>http://lseem.xyz/articles/a-nice-and-satisfying-way-to-look-at-connections/</guid>
+      <description>Introduction It is difficult to find this rather nice way of looking at connections in differential geometry textbooks. Perhaps because it is not so much of use in Riemannian geometry (where your connection is basically always the Levi-Cività connection so in fact all the curvature is induced by the metric). But still, I think it&amp;rsquo;s nice and prepares the student for further study in geometry.
+In this article I&amp;rsquo;ll explain two Nice and Satisfying Things about this point of view.</description>
     </item>
     
   </channel>

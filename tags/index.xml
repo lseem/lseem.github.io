@@ -5,5 +5,50 @@
     <link>http://lseem.xyz/tags/</link>
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="http://lseem.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>differential geometry</title>
+      <link>http://lseem.xyz/tags/differential-geometry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://lseem.xyz/tags/differential-geometry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gauge theory</title>
+      <link>http://lseem.xyz/tags/gauge-theory/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://lseem.xyz/tags/gauge-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>geometry</title>
+      <link>http://lseem.xyz/tags/geometry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://lseem.xyz/tags/geometry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>maths</title>
+      <link>http://lseem.xyz/tags/maths/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://lseem.xyz/tags/maths/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>physics</title>
+      <link>http://lseem.xyz/tags/physics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://lseem.xyz/tags/physics/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
