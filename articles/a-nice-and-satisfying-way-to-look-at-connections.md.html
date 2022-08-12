@@ -2,55 +2,86 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="date" content='$date-meta'>
-		<meta name="viewport" content="widge=device-width,initial-scale=1.0">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<title>A Nice and Satisfying Way to Look at Connections</title>
 		<link rel="stylesheet" href="/static/css/style.css"></link>
-		<script>
-			MathJax = {
-				tex: {
-					inlineMath: [['$', '$']],
-					macros: {
-						a: "\\alpha",
-						b: "\\beta",
-						Ga: "\\Gamma",
-						si: "\\sigma",
-						om: "\\omega",
+<!--
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"></link>
+				<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+				<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous" -->
 
-						R: "\\mathbb{R}",
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" crossorigin="anonymous">
 
-						GL: "\\mathrm{GL}",
-						Lie: "\\mathrm{Lie}",
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js" integrity="sha384-ljao5I1l+8KYFXG7LNEA7DyaFvuvSCmedUf6Y6JI7LJqiu8q5dEivP2nDdFH31V4" crossorigin="anonymous"></script>
 
-						d: "\\mathrm{d}",
-						del: "\\nabla",
-						pd: "\\partial",
-						sections: ["C^\\infty(#1)", 1],
-						T: "\\mathcal{T}",
-					}
+  <!-- To automatically render math in text elements, include the auto-re    nder extension: -->
+ <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        onload="
+        let macros = {
+								'\\a': '\\alpha',
+								'\\b': '\\beta',
+								'\\Ga': '\\Gamma',
+								'\\e': '\\epsilon',
+								'\\si': '\\sigma',
+								'\\om': '\\omega',
 
-				},
-				svg: {
-					fontCache: 'global'
-				}
-			};
-		</script>
-		<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-		<script type="text/javascript" src="http://livejs.com/live.js"></script>
-	</head>
+								'\\C': '\\mathbb{C}',
+								'\\H': '\\mathbb{H}',
+								'\\R': '\\mathbb{R}',
+								'\\Z': '\\mathbb{Z}',
+
+								'\\GL': '\\mathrm{GL}',
+								'\\Lie': '\\mathrm{Lie}',
+				
+								'\\d': '\\mathrm{d}',
+								'\\del': '\\nabla',
+								'\\pd': '\\partial',
+								'\\sections': 'C^\\infty\\left(#1\\right)',
+				
+								'\\calA': '\\mathcal{A}',
+								'\\calB': '\\mathcal{B}',
+								'\\calT': '\\mathcal{T}',
+				
+								'\\empty': '\\emptyset',
+
+
+								'\\inv': '{#1}^{-1}',
+								'\\norm': '\\lVert{#1}\\rVert',
+								'\\cbracket': '\\left\\{#1\\right\\}',
+								'\\rbracket': '\\left(#1\\right)'
+        };
+        document.addEventListener('DOMContentLoaded', function() {
+            renderMathInElement(document.body, {
+                // customised options
+                // • auto-render specific keys, e.g.:
+                delimiters: [
+                  {left: '$$', right: '$$', display: true},
+                  {left: '$', right: '$', display: false},
+                  {left: '\\\\begin{alignat}', right: '\\\\end{alignat}', display: true},
+                  {left: '\\\\begin{alignat*}', right: '\\\\end{alignat*}', display: true},
+                ],
+                macros: macros,
+                // • rendering keys, e.g.:
+                throwOnError : false,
+            });
+        });">
+    </script>
+  </head>
+
 <h1>A Nice and Satisfying Way to Look at Connections</h1>
 <small>Tuesday 25 January 2022</small>
 <hr />
 <h2 id="introduction">Introduction</h2>
 <p>It is difficult to find this rather nice way of looking at connections in differential geometry textbooks. Perhaps because it is not so much of use in Riemannian geometry (where your connection is basically always the Levi-Cività connection so in fact all the curvature is induced by the metric). But still, I think it’s nice and prepares the student for further study in geometry.</p>
-<p>In this article I’ll explain two Nice and Satisfying Things about this point of view. The first will be all about local representations (so we’ll finish and transition formula) and then we’ll talk about connections on principal bundles.</p>
+<p>In this article I’ll explain two Nice and Satisfying Things about this point of view. The first will be all about local representations (so we’ll finish with a transition formula) and then we’ll talk about connections on principal bundles.</p>
 <p>It has been said that this way of looking at connections is popular in gauge theory, but I’m not a physicist and nor do I feel well-versed enough in physics in order to substantiate this claim.</p>
-<p>So let <span class="math inline">(<em>M</em>, <em>g</em>)</span> be a Riemannian manifold, and let <span class="math inline"><em>E</em></span> be a vector bundle of rank <span class="math inline"><em>k</em></span> over <span class="math inline"><em>M</em></span>.</p>
-<p>Consider a connection <span class="math inline">$\del:\T(M)\times\sections(E)\to\sections(E)$</span> over <span class="math inline"><em>M</em></span>; that is (by our usual definitions) a map such that for any functions <span class="math inline"><em>f</em>, <em>g</em> ∈ <em>C</em><sup>∞</sup>(<em>M</em>)</span>, vector fields <span class="math inline">$X,Y\in\T(M)$</span>, and section <span class="math inline">$\si\in\sections(E)$</span>,</p>
+<p>So let <span class="math inline">(<em>M</em>, <em>g</em>)</span> be a Riemannian manifold, and let <span class="math inline"><em>E</em></span> be a vector bundle of rank <span class="math inline"><em>k</em></span> over <span class="math inline"><em>M</em></span>. Denote by <span class="math inline">$\calT(M)$</span> the set of sections of the tangent bundle (i.e. set of vector fields), and denote by <span class="math inline">$\sections{E}$</span> the set of sections of <span class="math inline"><em>E</em></span>. (Of course, throughout we remain in the smooth <span class="math inline"><em>C</em><sup>∞</sup></span> category).</p>
+<p>Consider a connection <span class="math inline">$\del:\calT(M)\times\sections{E}\to\sections{E}$</span> over <span class="math inline"><em>M</em></span>; that is (by our usual definitions) a map such that for any functions <span class="math inline"><em>f</em>, <em>g</em> ∈ <em>C</em><sup>∞</sup><em>M</em></span>, vector fields <span class="math inline">$X,Y\in\calT(M)$</span>, and section <span class="math inline">$\si\in\sections{E}$</span>,</p>
 <ol type="i">
 <li><span class="math inline">$\del_X(f\si)=(Xf)\si + f\del_X\si$</span> (the Leibniz law in the “section of <span class="math inline"><em>E</em></span>” argument;</li>
 <li><span class="math inline">$\del_{fX+gY}\si = f\del_X\si + g\del_Y\si$</span> (tensorial in the “direction (vector field)” argument</li>
-<li><span class="math inline">$\del_\cdot \si$</span> is <span class="math inline">$\R$</span>-linear in the <span class="math inline">$\T(M)$</span> (direction/vector field) argument.</li>
+<li><span class="math inline">$\del_\cdot \si$</span> is <span class="math inline">$\R$</span>-linear in the <span class="math inline">$\calT(M)$</span> (direction/vector field) argument.</li>
 </ol>
 <p>This definition of a connection requires us to <em>specify</em> the direction in which we wish to differentiate. But what if we want to withhold this direction?</p>
 <p>In plain old <span class="math inline">$\R^n$</span>, we do this all the time. Recall that for a function <span class="math inline">$f\in C^\infty(\R^n)$</span> we can take its directional derivative in the direction of some <span class="math inline">$v\in\R^n$</span>, defined by <br /><span class="math display">$$ \pd_vf (x) := \lim_{h\to0}\frac{f(x+hv) - f(x)}{h}. $$</span><br /> But we can recover this from the Jacobian <span class="math inline"><em>D</em><em>f</em></span> of <span class="math inline"><em>f</em></span> via matrix multiplication: <br /><span class="math display">$$ \pd_v f = (Df)v. $$</span><br /> So the Jacobian is an object which allows us to “withhold the direction” of differentiation until later. It turns out that we can also do this for connections.</p>
@@ -64,10 +95,10 @@
 <h2 id="nice-and-satisfying-thing-1-local-representatives">Nice and Satisfying Thing #1: Local Representatives</h2>
 <p>Did you know that your connection can have local representatives? In the previous formulation, this fact is slightly obscured. But now in this new formulation, we will see that our connection locally decomposes as a sum of the <strong>exterior derivative</strong> and a <strong>matrix of <span class="math inline"><em>E</em></span>-valued 1-forms</strong>!</p>
 <p>So let <span class="math inline">$U_\a$</span> be a chart inducing a bundle chart <span class="math inline">$U_\a\times\R^k$</span> of the bundle <span class="math inline"><em>E</em></span>. Then any section <span class="math inline">$\si:M\to E$</span> is locally a map <span class="math inline">$\si_\a:U_\a\to U_\a\times\R^k$</span>; that is, a map <span class="math inline">$\si_\a: U_\a\to\R^k$</span>.</p>
-<p>Consider the constant sections <span class="math inline">$e_j:U_\a\to\R^k$</span> <br /><span class="math display"><em>e</em><sub><em>j</em></sub> = (0, …, 1, …, 0).</span><br /> Then <span class="math inline">$\d_Ae_j$</span> is a vector of 1-forms<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> <br /><span class="math display">$$ \d_Ae_j = e_i\om^i_j $$</span><br /> for some 1-forms <span class="math inline">$\om^i_j\in\T^*(U_\a)$</span>. Then since the bundle is trivial on <span class="math inline">$U_\a$</span>, we can write our section <span class="math inline">$\si=e_j\si^j$</span> as a sum of component functions <span class="math inline">$\si^j:U_\a\to\R$</span>. So on <span class="math inline">$U_\a$</span>, <br /><span class="math display">$$\begin{align*}
+<p>Consider the constant sections <span class="math inline">$e_j:U_\a\to\R^k$</span> <br /><span class="math display"><em>e</em><sub><em>j</em></sub> = (0, …, 1, …, 0).</span><br /> Then <span class="math inline">$\d_Ae_j$</span> is a vector of 1-forms<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> <br /><span class="math display">$$ \d_Ae_j = e_i\om^i_j $$</span><br /> for some 1-forms <span class="math inline">$\om^i_j\in\calT^*(U_\a)$</span>. Then since the bundle is trivial on <span class="math inline">$U_\a$</span>, we can write our section <span class="math inline">$\si=e_j\si^j$</span> as a sum of component functions <span class="math inline">$\si^j:U_\a\to\R$</span>. So on <span class="math inline">$U_\a$</span>, <br /><span class="math display">$$\begin{align*}
         \d_A\si_\a &amp;= \d_A(e_j\si^j) \\
             &amp;= e_j\d\si^j + \si^j\d_A e_j \\
-            &amp;= e_j\d\si_\a + \si^j\e_i\om^i_j
+            &amp;= e_j\d\si_\a + \si^j e_i\om^i_j
     \end{align*}$$</span><br /> which we can write more succinctly as <br /><span class="math display">$$ \d_A\si_\a = \d\si_\a + \om\si_\a. $$</span><br /> So on <span class="math inline">$U_\a$</span>, we have <br /><span class="math display">$$ \d_A = d+\om. $$</span><br /> We call <span class="math inline">$\om$</span> the <strong>local representative of the connection</strong>.</p>
 <p>Now, as we should all be accustomed to by now, local representatives mean we get transition formulae for computing across charts. So suppose that <span class="math inline">$\d_A$</span> has local representative <span class="math inline">$\om_\a$</span> on <span class="math inline">$U_\a$</span>, and <span class="math inline">$\om_\b$</span> on <span class="math inline">$U_\b$</span>. Then certainly for any section <span class="math inline">$\si$</span>,<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> <br /><span class="math display">$$ \d_A\si_\a = g_{\a\b}\d_A\si_\b. $$</span><br /> Therefore <br /><span class="math display">$$ \d\si_\a + \om_\a\si_\a = g_{\a\b}(\d\si_\b + \om_\b\si_\b). $$</span><br /> But <span class="math inline">$\si_\b = g_{\a\b}^{-1}$</span> so we have <br /><span class="math display">$$ \d\si_\a + \om_\a\si_\a = g_{\a\b}d(g_{\a\b}^{-1}\si_\a) + g_{\a\b}\om_\b g_{\a\b}^{-1}\si_\a. $$</span><br /> Thus <br /><span class="math display">$$ \d\si_\a + \om_\a\si_\a = \d\si_\a + g_{\a\b}(dg_{\a\b}^{-1} + \om_\b g_{\a\b}^{-1})\si_\a. $$</span><br /> So our transition formula is <br /><span class="math display">$$ \om_\a + g_{\a\b}\d{g_{\a\b}^{-1}} + g_{\a\b}\om_\b g_{\a\b}^{-1}. $$</span><br /></p>
 <p>As you may have been taught in your course on Riemannian geometry, whenever you have a transition formula then you can patch these local objects together to get a global object defined on the whole manifold. So in fact these transition formulae give us a whole other definition of a connection! Roughly speaking, a connection is an object that locally decomposes like <span class="math inline">$d + \om_\a$</span> where <span class="math inline">$\om_\a$</span> are <span class="math inline"><em>k</em> × <em>k</em></span> matrices of 1-forms that transform like above.</p>
