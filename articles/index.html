@@ -31,25 +31,35 @@
 								'\\R': '\\mathbb{R}',
 								'\\Z': '\\mathbb{Z}',
 
-								'\\GL': '\\mathrm{GL}',
-								'\\Lie': '\\mathrm{Lie}',
-				
-								'\\d': '\\mathrm{d}',
-								'\\del': '\\nabla',
-								'\\pd': '\\partial',
-								'\\sections': 'C^\\infty\\left(#1\\right)',
-				
 								'\\calA': '\\mathcal{A}',
 								'\\calB': '\\mathcal{B}',
 								'\\calT': '\\mathcal{T}',
 				
+								'\\GL': '\\mathrm{GL}',
+								'\\Lie': '\\mathrm{Lie}',
+								
+								'\\dim': '\\mathrm{dim}',
+								'\\tr': '\\mathrm{trace}',
+								
+								'\\tensor': '\\otimes',
+								
+								'\\iso': '\\equiv',
+				
+								'\\d': '\\mathrm{d}',
+								'\\del': '\\nabla',
+								'\\conn': '\\nabla',
+								'\\pd': '\\partial',
+								'\\pderiv': '\\frac{\\partial{#1}}{\\partial{#2}}',
+								'\\smooth': 'C^\\infty\\left(#1\\right)',
+				
 								'\\empty': '\\emptyset',
 
-
 								'\\inv': '{#1}^{-1}',
+								'\\inner': '\\langle{#1}\\rangle',
 								'\\norm': '\\lVert{#1}\\rVert',
 								'\\cbracket': '\\left\\{#1\\right\\}',
-								'\\rbracket': '\\left(#1\\right)'
+								'\\rbracket': '\\left(#1\\right)',
+								'\\sbracket': '\\left[#1\\right]'
         };
         document.addEventListener('DOMContentLoaded', function() {
             renderMathInElement(document.body, {
@@ -72,6 +82,7 @@
 <body>
 <h1 id="articles">Articles</h1>
 <ol>
+<li><a href="/articles/tensors-in-riemannian-geometry.md.html">Tensors in Riemannian Geometry</a>
 <li><a href="/articles/a-nice-and-satisfying-way-to-look-at-connections.md.html">A Nice and Satisfying Way to Look at Connections</a>
 </ol>
 </html>

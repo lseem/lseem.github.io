@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>Tensors in Riemannian Geometry</title>
+		<link rel="stylesheet" href="/static/css/style.css"></link>
+<!--
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"></link>
+				<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+				<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous" -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js" integrity="sha384-ljao5I1l+8KYFXG7LNEA7DyaFvuvSCmedUf6Y6JI7LJqiu8q5dEivP2nDdFH31V4" crossorigin="anonymous"></script>
+
+  <!-- To automatically render math in text elements, include the auto-re    nder extension: -->
+ <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        onload="
+        let macros = {
+								'\\a': '\\alpha',
+								'\\b': '\\beta',
+								'\\Ga': '\\Gamma',
+								'\\e': '\\epsilon',
+								'\\si': '\\sigma',
+								'\\om': '\\omega',
+
+								'\\C': '\\mathbb{C}',
+								'\\H': '\\mathbb{H}',
+								'\\R': '\\mathbb{R}',
+								'\\Z': '\\mathbb{Z}',
+
+								'\\calA': '\\mathcal{A}',
+								'\\calB': '\\mathcal{B}',
+								'\\calT': '\\mathcal{T}',
+				
+								'\\GL': '\\mathrm{GL}',
+								'\\Lie': '\\mathrm{Lie}',
+								
+								'\\dim': '\\mathrm{dim}',
+								'\\tr': '\\mathrm{trace}',
+								
+								'\\tensor': '\\otimes',
+								
+								'\\iso': '\\equiv',
+				
+								'\\d': '\\mathrm{d}',
+								'\\del': '\\nabla',
+								'\\conn': '\\nabla',
+								'\\pd': '\\partial',
+								'\\pderiv': '\\frac{\\partial{#1}}{\\partial{#2}}',
+								'\\smooth': 'C^\\infty\\left(#1\\right)',
+				
+								'\\empty': '\\emptyset',
+
+								'\\inv': '{#1}^{-1}',
+								'\\inner': '\\langle{#1}\\rangle',
+								'\\norm': '\\lVert{#1}\\rVert',
+								'\\cbracket': '\\left\\{#1\\right\\}',
+								'\\rbracket': '\\left(#1\\right)',
+								'\\sbracket': '\\left[#1\\right]'
+        };
+        document.addEventListener('DOMContentLoaded', function() {
+            renderMathInElement(document.body, {
+                // customised options
+                // • auto-render specific keys, e.g.:
+                delimiters: [
+                  {left: '$$', right: '$$', display: true},
+                  {left: '$', right: '$', display: false},
+                  {left: '\\\\begin{alignat}', right: '\\\\end{alignat}', display: true},
+                  {left: '\\\\begin{alignat*}', right: '\\\\end{alignat*}', display: true},
+                ],
+                macros: macros,
+                // • rendering keys, e.g.:
+                throwOnError : false,
+            });
+        });">
+    </script>
+  </head>
+
+<h1>Tensors in Riemannian Geometry</h1>
+<small>Saturday 22 October 2022</small>
+<hr />
+<p>This article is for people who are taking a course in Riemannian
+geometry but are a bit confused by all the various things you may or may
+not be able to do with tensors. I’ll include some explicit and easy
+computational examples to ground things. But I’m expecting the reader to
+know at least the Riemann curvature tensor and Riemann curvature
+endomorphism is.</p>
+<p>Let’s first look at the vector space level. Let <span
+class="math inline"><em>V</em></span> be a real vector space of finite
+dimension, with <span class="math inline"><em>V</em><sup>*</sup></span>
+its dual. Then a <strong>tensor</strong> of <strong>rank</strong> <span
+class="math inline">(<em>k</em>,<em>l</em>)</span> is a map <span
+class="math display">$$ \underset{l\textrm{
+times}}{V^*\times\cdots\times V^*}\times\underset{k\textrm{
+times}}{V\times\cdots\times V} \to \R $$</span> that is linear in each
+argument.</p>
+<p>The set of all <span
+class="math inline">(<em>k</em>,<em>l</em>)</span>-tensors on <span
+class="math inline"><em>V</em></span> is denoted <span
+class="math inline"><em>T</em><sub><em>l</em></sub><sup><em>k</em></sup>(<em>V</em>)</span>.
+If <span
+class="math inline"><em>v</em><sub>1</sub>, …, <em>v</em><sub><em>n</em></sub></span>
+is a basis for <span class="math inline"><em>V</em></span>, then a <span
+class="math inline">(<em>k</em>,<em>l</em>)</span>-tensor is defined
+precisely by its action on the basis elements. Therefore, a tensor is
+defined by the numbers</p>
+<p>For two tensors <span
+class="math inline"><em>F</em> ∈ <em>T</em><sub><em>l</em></sub><sup><em>k</em></sup>(<em>V</em>)</span>
+and <span
+class="math inline"><em>G</em> ∈ <em>T</em><sub><em>n</em></sub><sup><em>m</em></sup>(<em>V</em>)</span>,
+we define their <strong>tensor product</strong> <span
+class="math inline">$F\tensor G$</span> to be the map defined by <span
+class="math display">$$ (F\tensor
+G)(\om^1,\ldots,\om^{l+n},X_1,\ldots,X_{k+m}) \\ := \\
+F(\om^1,\ldots,\om^l,X_1\ldots,X_k)G(\om^{l+1},\ldots,\om^{l+n},X_{k+1},\ldots,X_{k+m})
+$$</span> where <span class="math inline">$\om^1,\ldots\om^{l+n}\in
+V^*$</span> and <span
+class="math inline"><em>X</em><sub>1</sub>, …, <em>X</em><sub><em>k</em> + <em>m</em></sub> ∈ <em>V</em></span>.
+Note that <span
+class="math inline">$F(\om^1,\ldots,\om^l,X_1\ldots,X_k)$</span> and
+<span
+class="math inline">$G(\om^{l+1},\ldots,\om^{l+n},X_{k+1},\ldots,X_{k+m})$</span>
+are just real numbers, so the product on the right hand side of the
+above definition is just multiplication of real numbers.</p>
+<p><strong>Ex:</strong> Show that <span class="math inline">$F\tensor G:
+\underset{l+n\textrm{ times}}{V^*\times\cdots\times
+V^*}\times\underset{k+m\textrm{ times}}{V\times\cdots\times V} \to
+\R$</span> is linear in each argument, so that we do in fact have <span
+class="math inline">$F\tensor G\in T^{k+m}_{l+n}(V)$</span>,</p>
+<p><strong>Ex:</strong> Come up with an example to show that the product
+of tensors is not necessarily commutative.</p>
+<p><strong>Lemma:</strong> There is a basis-independent (i.e. “natural”)
+linear isomorphism between <span
+class="math inline"><em>T</em><sub><em>l</em> + 1</sub><sup><em>k</em></sup>(<em>V</em>)</span>
+and the space of multilinear maps <span class="math display">$$
+\underset{l\textrm{ times}}{V^*\times\cdots\times
+V^*}\times\underset{k\textrm{ times}}{V\times\cdots\times V} \to V.
+$$</span> <em>Proof:</em> We will construct this isomorphism in a basis
+independent manner. Call this isomorphism <span class="math display">$$
+\Phi : \cbracket{\underset{l\textrm{ times}}{V^*\times\cdots\times
+V^*}\times\underset{k\textrm{ times}}{V\times\cdots\times V} \to V} \to
+T^k_{l+1}. $$</span></p>
+<p>Let <span class="math inline">$B:\underset{l\textrm{
+times}}{V^*\times\cdots\times V^*}\times\underset{k\textrm{
+times}}{V\times\cdots\times V} \to V$</span> be multilinear.</p>
+<p>For <span class="math inline">$\om^1,\ldots,\om^{l+1}\in V^*$</span>
+and <span
+class="math inline"><em>X</em><sub>1</sub>, …, <em>X</em><sub><em>k</em></sub> ∈ <em>V</em></span>
+define <span class="math display">$$ (\Phi
+B)(\om^1,\ldots,\om^{l+1},X_1,\ldots,X_k) \\ :=
+\om^{l+1}\rbracket{B(\om_1,\ldots,\om^l,X_1,\ldots,X_k)}. $$</span> Note
+that <span class="math inline"><em>Φ</em><em>B</em></span> is linear in
+each argument because when restricting to each argument, we have a
+composition of linear functions.</p>
+<p>Now, <span class="math inline"><em>Φ</em></span> is injective: <span
+class="math inline"><em>Φ</em><em>B</em> ≡ 0</span> if and only if <span
+class="math inline">$\om^{l+1}\rbracket{B(\om_1,\ldots,\om^l,X_1,\ldots,X_k)}=0$</span>
+for each <span class="math inline">$\om^1,\ldots,\om^{l+1}\in
+V^*$</span> and for each <span
+class="math inline"><em>X</em><sub>1</sub>, …, <em>X</em><sub><em>k</em></sub> ∈ <em>V</em></span>.
+This is the case if and only if <span
+class="math inline">$B(\om_1,\ldots,\om^l,X_1,\ldots,X_k)=0$</span> for
+all inputs, which is the case if and only if <span
+class="math inline"><em>B</em> ≡ 0</span>. Thus <span
+class="math inline">ker <em>Φ</em></span> is trivial and so <span
+class="math inline"><em>Φ</em></span> is injective.</p>
+<p>On the other hand, we saw before that <span
+class="math inline">dim <em>T</em><sub><em>l</em> + 1</sub><sup><em>k</em></sup>(<em>V</em>) = <em>n</em><sup><em>k</em> + <em>k</em> + 1</sup></span>,
+and similarly we have that <span class="math display">$$
+\dim\cbracket{\underset{l\textrm{ times}}{V^*\times\cdots\times
+V^*}\times\underset{k\textrm{ times}}{V\times\cdots\times V} \to V} =
+n^{k+l+1}. $$</span> <strong>Ex:</strong> The map <span
+class="math inline"><em>Φ</em></span> is linear.</p>
+<p>Thus <span class="math inline"><em>Φ</em></span> is a linear map
+between vector spaces of the same dimension, with trivial kernel, and so
+<span class="math inline"><em>Φ</em></span> is a linear isomorphism.
+<strong>QED</strong></p>
+<h2 id="the-trace-of-a-tensor">The trace of a tensor</h2>
+<p>Now, let <span
+class="math inline"><em>F</em> ∈ <em>T</em><sub><em>k</em><sub><em>l</em></sub></sub>(<em>V</em>)</span>
+be a tensor. Let <span class="math inline">$\om^1,\ldots,\om^{l-1}\in
+V^*$</span> and <span
+class="math inline"><em>X</em><sub>1</sub>, …, <em>X</em><sub><em>k</em> − 1</sub> ∈ <em>V</em></span>.
+Then <span class="math display">$$
+F(\om_1,\ldots,\om_{l-1},\cdot,X_1,\ldots,X_{k-1},\cdot)\in T^1_1(V)
+$$</span> is a map <span class="math inline">$V^*\times V\to\R$</span>
+and so is naturally isomorphic (by the above lemma) to some linear map
+<span class="math inline"><em>F</em> : <em>V</em> → <em>V</em></span>.
+This map <span
+class="math inline"><em>F</em> : <em>V</em> → <em>V</em></span> has a
+trace, which is defined in a basis-independed manner. In this way, we
+can define the <strong>trace of a tensor</strong> <span
+class="math inline">$\tr:T^k_l(V)\to T^{k-1}_{l-1}(V)$</span> as <span
+class="math display">$$
+\tr(F)(\om_1,\ldots,\om_{l-1},X_1,\ldots,X_{k-1}) \\ := \\
+\tr\sbracket{\inv{\Phi}\rbracket{T(\om_1,\ldots,\om_{l-1},\cdot,X_1,\ldots,X_{k-1},\cdot)}}.
+$$</span></p>
+<h2 id="all-this-in-terms-of-a-basis">All this in terms of a basis</h2>
+<p>So far we’ve done all this in a basis-independent manner, but it’s
+certainly useful to introduce a basis to make this more concrete.</p>
+<p>Let <span
+class="math inline"><em>E</em><sub>1</sub>, …, <em>E</em><sub><em>n</em></sub></span>
+be a basis for <span class="math inline"><em>V</em></span>, and <span
+class="math inline"><em>E</em><sub>1</sub><sup>*</sup>, …, <em>E</em><sub><em>n</em></sub><sup>*</sup></span>
+the corresponding basis for <span
+class="math inline"><em>V</em><sup>*</sup></span> (i.e. <span
+class="math inline"><em>E</em><sub><em>i</em></sub><sup>*</sup>(<em>E</em><sub><em>j</em></sub>) = <em>δ</em><sub><em>j</em></sub><sup><em>i</em></sup></span>).</p>
+<p><strong>E.g.:</strong> Consider a <span
+class="math inline">(1,2)</span>-tensor <span
+class="math inline"><em>F</em> ∈ <em>T</em><sub>2</sub><sup>1</sup>(<em>V</em>)</span>.
+So <span class="math inline"><em>F</em></span> is a map <span
+class="math inline">$V^*\times V^*\times V\to\R$</span>, and <span
+class="math inline"><em>F</em></span> is specified precisely by its
+action on the bases. There are <span
+class="math inline"><em>n</em></span> basis elements for the first copy
+of <span class="math inline"><em>V</em><sup>*</sup></span>, <span
+class="math inline"><em>n</em></span> basis elements for the second copy
+of <span class="math inline"><em>V</em><sup>*</sup></span>, and <span
+class="math inline"><em>n</em></span> basis elements for <span
+class="math inline"><em>V</em></span>, and so <span
+class="math inline"><em>F</em></span> is specified by <span
+class="math inline"><em>n</em><sup>3</sup></span> numbers. For
+illustrative purposes, take <span
+class="math inline"><em>n</em> = 2</span>. Then <span
+class="math inline"><em>F</em></span> is specified by <span
+class="math inline">2<sup>3</sup> = 8</span> real numbers:</p>
+<p><span class="math display">$$
+F(E_1^*,E_1^*,E_1) =: F^{1,1}_1 \qquad
+F(E_1^*,E_1^*,E_2) =: F^{1,1}_2 \\
+F(E_1^*,E_2^*,E_1) =: F^{1,2}_1 \qquad
+F(E_1^*,E_2^*,E_2) =: F^{1,2}_2 \\
+F(E_2^*,E_1^*,E_1) =: F^{2,1}_1 \qquad
+F(E_2^*,E_1^*,E_2) =: F^{2,1}_2 \\
+F(E_2^*,E_2^*,E_1) =: F^{2,2}_1 \qquad
+F(E_2^*,E_2^*,E_2) =: F^{2,2}_2.
+$$</span> That is, <span class="math inline"><em>F</em></span> is
+specified by its action on all possible combinations of the basis
+elements.</p>
+<p>Now that we have a basis, we have an explicit isomorphism <span
+class="math inline">$V\iso V^*$</span>, where <span
+class="math inline">$E_i\mapsto\tilde{E_i}$</span> for each <span
+class="math inline"><em>i</em></span> (and extend linearly also). With
+respect to these bases, we have the tensors <span
+class="math display">$$
+\tilde{E_1},\ldots,\tilde{E_n}:V\to\R\quad\textrm{where}\quad\tilde{E_i}(E_j):=\delta^i_j
+\\
+\tilde{E_1^*},\ldots,\tilde{E_n^*}:V^*\to\R\quad\textrm{where}\quad\tilde{\phi^i}(\phi^j):=\delta^j_i
+$$</span> Notice that <span class="math inline">$\tilde{E_i}=
+E_i^*$</span>, and since <span class="math inline">$V\iso V^**$</span>
+is a <em>natural</em> isomorphism, we can conflate <span
+class="math inline">$\tilde{E_i^*}:=E_i^{**}$</span> with <span
+class="math inline"><em>E</em><sub><em>i</em></sub></span>. In
+summary:</p>
+<ul>
+<li><span class="math inline">$\cbracket{E_1,\ldots,E_n}$</span> is a
+basis for <span class="math inline"><em>V</em></span></li>
+<li><span class="math inline">$\cbracket{E_1^*,\ldots,E_n^*}$</span> is
+the corresponding basis for <span
+class="math inline"><em>V</em><sup>*</sup></span></li>
+<li><span
+class="math inline">$\cbracket{E_1^{**},\ldots,E_n^{**}}$</span> is a
+basis for <span class="math inline"><em>V</em><sup>**</sup></span>
+<em>and</em> are tensors <span class="math inline">$\tilde{E_i^*}\in
+T^0_1(V)$</span>; <em>but</em> <span
+class="math inline"><em>E</em><sub><em>i</em></sub><sup>**</sup></span>
+are naturally isomorphic to <span
+class="math inline"><em>E</em><sub><em>i</em></sub></span> so we often
+denote <span
+class="math inline"><em>E</em><sub><em>i</em></sub><sup>**</sup></span>
+as <span
+class="math inline"><em>E</em><sub><em>i</em></sub></span>.</li>
+</ul>
+<p><strong>The upshot:</strong> We can use <span
+class="math inline"><em>E</em><sub><em>i</em></sub></span> and <span
+class="math inline"><em>E</em><sub><em>i</em></sub><sup>*</sup></span>
+to generate a basis for T^k_l(V)$.</p>
+<p><strong>E.g.:</strong> Consider <span
+class="math inline"><em>F</em> ∈ <em>T</em><sub>2</sub><sup>1</sup>(<em>V</em>)</span>
+given by <span
+class="math display"><em>F</em>(<em>E</em><sub>1</sub><sup>*</sup>,<em>E</em><sub>1</sub><sup>*</sup>,<em>E</em><sub>1</sub>) = <em>F</em><sub>1</sub><sup>1, 1</sup> = 2<em>F</em>(<em>E</em><sub>1</sub><sup>*</sup>,<em>E</em><sub>1</sub><sup>*</sup>,<em>E</em><sub>2</sub>) = <em>F</em><sub>2</sub><sup>1, 1</sup> = 3<em>F</em>(<em>E</em><sub>2</sub><sup>*</sup>,<em>E</em><sub>1</sub><sup>*</sup>,<em>E</em><sub>2</sub>) = <em>F</em><sub>2</sub><sup>2, 1</sup> = 5</span>
+with the rest zero. Then we can write <span class="math display">$$ F =
+2 E_1\tensor E_1\tensor E_1^* + 3 E_1\tensor E_1\tensor E_2^* + 5
+E_2\tensor E_2\tensor E_2^*. $$</span> To see what is going on, compute
+<span class="math inline"><em>F</em><sub>1</sub><sup>1, 1</sup></span>,
+<span class="math inline"><em>F</em><sub>2</sub><sup>1, 1</sup></span>,
+and <span
+class="math inline"><em>F</em><sub>2</sub><sup>2, 1</sup></span> from
+the above expression for <span class="math inline"><em>F</em></span> and
+the definition of the tensor product.</p>
+<p><strong>Ex:</strong> Prove, by giving an explicit basis, that <span
+class="math inline">dim (<em>T</em><sub><em>l</em></sub><sup><em>k</em></sup>(<em>V</em>)) = <em>n</em><sup><em>k</em> + <em>l</em></sup></span>.</p>
+<p>Now let’s take the trace of this tensor. Let <span
+class="math inline"><em>o</em><em>m</em> ∈ <em>V</em><sup>*</sup></span>.
+Then <span class="math display">$$ \tr(F)(\om) = \tr \Phi^{-1}
+F(\om^1,\cdot,\cdot), $$</span> where <span
+class="math inline"><em>Φ</em></span> is the isomorphism in the before
+lemma.</p>
+<p>In order to take the trace we need to describe <span
+class="math inline">$F(\om,\cdot,\cdot)$</span> as an endomorphism <span
+class="math inline"><em>V</em> → <em>V</em></span>. Since <span
+class="math inline"><em>E</em><sub><em>i</em></sub><sup>*</sup></span>
+is a basis for <span class="math inline"><em>V</em><sup>*</sup></span>,
+we have <span class="math display">$$ \om = \om_1 E_1^* + \om_2 E_2^*
+$$</span> for some <span class="math inline">$\om_1,\om_2\in\R$</span>.
+Then <span class="math display">$$ F(\om,\cdot,\cdot) = 2\om_1
+E_1\tensor E_1^* + 3\om_1 E_1\tensor E_2^* + 5\om_2 E_1\tensor E_2^*
+$$</span> which is equivalent to the endomorphism given by the matrix
+<span class="math display">$$
+\begin{pmatrix}
+2\om_1 &amp; 3\om_1 \\
+5\om_2 &amp; 0 \\
+\end{pmatrix}
+$$</span> whose trace is <span class="math inline">$2\om_1$</span>. Thus
+<span class="math inline">$\tr(F)(\om) = 2\om_1 = 2 E_1(\om)$</span> and
+so <span class="math display">$$ \tr(F) = 2E_1 $$</span> which is indeed
+a <span
+class="math inline">(0,1) − <em>t</em><em>e</em><em>n</em><em>s</em><em>o</em><em>r</em></span>,
+as required!</p>
+<h2 id="some-geometry">Some geometry</h2>
+<p>Now let’s apply this linear algebra to geometry. Let <span
+class="math inline"><em>M</em><sup>2</sup></span> be a surface, <span
+class="math inline"><em>p</em> ∈ <em>M</em></span> a point on this
+surface, and consider the tangent space <span
+class="math inline"><em>T</em><sub><em>p</em></sub><em>M</em></span> and
+the cotangent space <span
+class="math inline"><em>T</em><sub><em>p</em></sub><sup>*</sup><em>M</em></span>.
+Then <span class="math display">$$
+\pderiv{}{x^1}|_p, \pderiv{}{x^2}|_p \quad\textrm{form a basis for }T_pM
+\\
+\d{x^1}_p,\d{x^2}_p \quad\textrm{form a basis for }T_p^*M.
+$$</span> Suppose <span class="math inline"><em>M</em></span> has a
+Riemannian metric <span class="math inline"><em>g</em></span>. This
+means that <span class="math inline"><em>g</em></span> is a <span
+class="math inline">(2,0)</span>-tensor field which is symmetric and
+non-degenerate at each point. That is, at each point <span
+class="math inline"><em>p</em> ∈ <em>M</em></span> we are given a <span
+class="math inline">(2,0)</span>-tensor <span
+class="math inline"><em>g</em><sub><em>p</em></sub></span> such that</p>
+<ul>
+<li><span class="math inline">$g_p(\pd_1,\pd_2) =
+g_p(\pd_1,\pd_2)$</span></li>
+<li><span
+class="math inline"><em>g</em><sub><em>p</em></sub>(<em>X</em>,<em>X</em>) = 0 ⇔ <em>X</em> = 0</span>.</li>
+</ul>
+<p>Here, <span class="math inline">$\pd_i = \pderiv{}{x^i}|_p$</span> is
+shorthand.</p>
+<p>So at <span class="math inline"><em>p</em></span>, the metric <span
+class="math inline"><em>g</em><sub><em>p</em></sub></span> is specified
+by <span class="math inline">2<sup>2</sup> = 4</span> numbers <span
+class="math display">$$
+g_p(\pd_1,\pd_1) = g_{1,1} \qquad
+g_p(\pd_1,\pd_2) = g_{1,2} \\
+g_p(\pd_2,\pd_1) = g_{2,1} \qquad
+g_p(\pd_2,\pd_2) = g_{2,2}.
+$$</span> Except, of course, <span
+class="math inline"><em>g</em><sub><em>p</em></sub></span> is only
+specified by <em>three</em> numbers because symmetry gives <span
+class="math inline"><em>g</em><sub>2, 1</sub> = <em>g</em><sub>1, 2</sub></span>.
+So we can write the metric at a point as <span class="math display">$$
+g_p = g_{1,1}\d{x^1}_p\tensor\d{x^1}_p +
+g_{1,2}\d{x^1}_p\tensor\d{x^2}_p \\\quad +
+g_{2,1}\d{x^2}_p\tensor\d{x^1}_p + g_{2,2}\d{x^2}_p\tensor\d{x^2}_p \\
+    = g_{1,1}\d{x^1}_p\tensor\d{x^1}_p +
+2g_{1,2}\d{x^1}_p\tensor\d{x^2}_p \\\quad +
+g_{2,2}\d{x^2}_p\tensor\d{x^2}_p
+$$</span> Letting <span class="math inline"><em>p</em></span> vary, we
+get functions <span class="math inline">$g_{i,j}:M\to\R$</span> (which
+are smooth). We write <span
+class="math inline">$\d{x^i}\tensor\d{x^j}$</span> as <span
+class="math inline">$\d{x^i}\d{x^j}$</span>, and <span
+class="math inline">$\d{x^i}\tensor\d{x^i}$</span> as <span
+class="math inline">$\d{x^i}^2$</span> for notational convenience,
+giving <span class="math display">$$
+g = g_{1,1}\d{x_1}^2 + 2g_{1,2}\d{x^1}\d{x^2} + 2g_{2,2}\d{x^2}^2
+  = g_{ij}\d{x^i}\d{x^j}
+$$</span> using Einstein’s notation.</p>
+<p>Note that we can’t (yet) take the trace of a Riemannian metric
+because we can’t (yet) take the trace of <span
+class="math inline">(2,0)</span>-tensors. In order to do this we’d need
+to use musical isomorphisms.</p>
+<p>So let’s explore another common tensor, the Riemannian curvature
+endomorphism.</p>
+<p>Recall that the curvature endomorphism <span class="math display">$$
+R:\smooth{TM}\times\smooth{TM}\times\smooth{TM}\to\smooth{TM} $$</span>
+given by <span class="math display">$$ R(X,Y)Z = \conn_X\conn_Y Z -
+\conn_Y\conn_X Z - \conn_{[X,Y]} Z. $$</span> Let’s focus at a point
+<span class="math inline"><em>p</em> ∈ <em>M</em></span>. Then we have
+<span
+class="math display"><em>R</em><sub><em>p</em></sub> : <em>T</em><sub><em>p</em></sub><em>M</em> × <em>T</em><sub><em>p</em></sub><em>M</em> × <em>T</em><sub><em>p</em></sub><em>M</em> → <em>T</em><sub><em>p</em></sub><em>M</em></span>
+which by the before lemma we can turn into a <span
+class="math inline">(3,1)</span>-tensor <span class="math display">$$
+T_p^*M\times T_pM\times T_pM\times T_pM\to \R $$</span> given by <span
+class="math display">$$ R_p(\om, X, Y, Z) = \om(\conn_X\conn_Y Z -
+\conn_Y\conn_X Z - \conn_{[X,Y]} Z) $$</span> with the coefficients
+<span class="math display">$$ \rbracket{R^i_{jkl}}_p =
+R_p(\d{x}^i_p,\pd_j|_p,\pd_k|_p,\pd_l|_p) $$</span> which a priori are
+<span class="math inline">2<sup>4</sup> = 16</span> in number, but after
+considering symmetries of the curvature endomorphism are actually
+fewer.</p>
+<p>Let’s try to take the trace of this tensor. We have <span
+class="math display">$$ R = R^i_{jkl}
+\pd_i\tensor\d{x^j}\tensor\d{x^k}\tensor\d{x^l}. $$</span> This is a
+<span class="math inline">(3,1)</span>-tensor so its trace will be a
+<span class="math inline">(2,0)</span>-tensor. Let <span
+class="math inline"><em>X</em>, <em>Y</em> ∈ <em>T</em><sub><em>p</em></sub><em>M</em></span>
+with <span class="math display">$$
+X = X^1\pd_1 + X^2\pd_2
+Y = Y^1\pd_1 + Y^2\pd_2.
+$$</span></p>
+<p>Then <span class="math display">$$ R(\cdot,X,Y,\cdot) = R^i_{jkl}
+X^jY^k\pd_i\tensor\d{x^l} $$</span> which has trace <span
+class="math display"><em>R</em><sub><em>j</em><em>k</em>1</sub><sup>1</sup><em>X</em><sup><em>j</em></sup><em>Y</em><sup><em>k</em></sup> + <em>R</em><sub><em>j</em><em>k</em>2</sub><sup>2</sup><em>X</em><sup><em>j</em></sup><em>Y</em><sup><em>k</em></sup></span>
+which is, of course, the Ricci curvature.</p>
+<h2 id="musical-isomorphisms">Musical isomorphisms</h2>
+<p>Having been given a metric, which is an inner product at each tangent
+space, we no longer need a basis in order to produce an isomorphism
+<span class="math inline">$T_pM\iso T_p^*M$</span>. Therefore using this
+metric we can reshuffle a, say <span
+class="math inline">(4,0)</span>-tensor into a <span
+class="math inline">(3,1)</span>-tensor and then take its trace. Of
+course we could reshuffle this tensor to a <span
+class="math inline">(2,2)</span>-tensor and then take its trace, and
+we’d have to check that the trace is still the same.</p>
+<p>Let’s start at the vector space level. Let <span
+class="math inline"><em>V</em></span> be an <span
+class="math inline"><em>n</em></span>-dimensional vector space with
+inner product <span class="math inline">$\inner{\cdot,\cdot}$</span>.
+Then every element in the dual space <span class="math inline">$\a\in
+V^*$</span> has a unique representative <span
+class="math inline"><em>a</em> ∈ <em>V</em></span> such that <span
+class="math inline">$\a = \inner{a,\cdot}$</span>. Thus the inner
+product induces a linear isomorphism of vector spaces <span
+class="math inline"><em>V</em> → <em>V</em><sup>*</sup></span>, <span
+class="math inline">$a\to\inner{a,\cdot}$</span>.</p>
+<p>The inner product on <span class="math inline"><em>V</em></span> also
+induces an inner product on <span
+class="math inline"><em>V</em><sup>*</sup></span>: <span
+class="math display">$$ \inner{\a,\b}_{V^*} := \inner{a,b} $$</span>
+where <span
+class="math inline"><em>a</em>, <em>b</em> ∈ <em>V</em></span> such that
+<span class="math inline">$\a=\inner{a,\cdot}$</span> and <span
+class="math inline">$\b=\inner{b,\cdot}$</span>.</p>
+<p>In fact, these are exactly what we call the <strong>musical
+isomorphisms</strong>: <span class="math display">$$
+\flat:V\to V^* \qquad a^\flat := \inner{a,\cdot}
+\sharp:V^*\to V \qquad \a^\sharp := a.
+$$</span> We will soon elucidate this notation and convention.</p>
+<p>Indeed, let <span class="math inline">$X = X^i\pd_i \in T_pM$</span>
+and <span class="math inline">$\om = \om_i \d{x^i} \in T_p^*M$</span>.
+Then <span class="math display">$$ T_pM
+\overset{\sharp}{\underset{\flat}{\rightleftarrows}} T_p^*M
+$$</span>.</p>
+<p>On the one hand, <span
+class="math inline"><em>X</em><sup>♭</sup></span> is the element of
+<span
+class="math inline"><em>T</em><sub><em>p</em></sub><sup>*</sup><em>M</em></span>
+defined by <span
+class="math inline"><em>X</em><sup>♭</sup> := <em>g</em>(<em>X</em>,⋅)</span>
+so we have <span class="math display">$$
+X^\flat = g(X,\cdot) = g_{ij}\d{x^i}\d{x^j}(X,\cdot)
+        = g_{ij}X^i\d{x^j}.
+$$</span> Thus if <span
+class="math inline"><em>X</em><sup>♭</sup></span> is given in
+coefficients by <span class="math inline">$X^\flat=X_j\d{x^j}$</span>
+then <span
+class="math inline"><em>X</em><sub><em>j</em></sub> = <em>g</em><sub><em>i</em><em>j</em></sub><em>X</em><sup><em>i</em></sup></span>,
+so we have “lowered the indices”, and hence the flat <span
+class="math inline">♭ : <em>T</em><sub><em>p</em></sub><em>M</em> → <em>T</em><sub><em>p</em></sub><sup>*</sup><em>M</em></span>.</p>
+<p>On the other hand, <span class="math inline">$\om^\sharp$</span> is
+the element of <span
+class="math inline"><em>T</em><sub><em>p</em></sub><em>M</em></span>
+defined by <span class="math inline">$\om = g(\om^\sharp,
+\cdot)$</span>. So we have <span class="math display">$$ \om =
+g(\om^\sharp,\cdot) = g_{ij} (\om^\sharp)^i\d{x^j}. $$</span> That is,
+if <span class="math inline">$\om$</span> is given in coefficients by
+<span class="math inline">$\om = \om_i\d{x^i}$</span>, and <span
+class="math inline">$\om^\sharp$</span> by <span
+class="math inline">$\om^\sharp = \om^i\pd_i$</span> then <span
+class="math display">$$ \om^i = g^{ij}\om_j $$</span> (where of course
+<span
+class="math inline"><em>g</em><sup><em>i</em><em>j</em></sup></span> are
+the coefficients of the inverse matrix <span
+class="math inline">$\inv{(g_{ij})}$</span>), so we have “raised the
+indices”, hence the sharp <span class="math inline">♯</span>.</p>
+<p>Now let <span
+class="math inline"><em>F</em> ∈ <em>T</em><sub>;</sub><sup><em>k</em></sup>(<em>V</em>)</span>.
+We can raise any of the <span class="math inline"><em>l</em></span>
+covector indices and lower any of the <span
+class="math inline"><em>k</em></span> vector indices.</p>
+<p><strong>E.g.:</strong> If <span class="math inline">$F =
+F^i_{jk}\pd_i\tensor\d{x^j}\tensor\d{x^k}\in T^1_2$</span>, then we
+can</p>
+<ul>
+<li>raise the second index: <span class="math display">$$ F^{ij}_k =
+g^{il}F^i_{lk}\pd_i\tensor\pd_j\tensor\d{x^k}\in T^2_1 $$</span></li>
+<li>raise the third index: <span class="math display">$$ F^{i\quad k}_j
+= g^{kl} F^i_{jl}\pd_i\tensor\pd_k\tensor\d{x^j}\in T^2_1$$</span></li>
+<li>lower the first index: <span class="math display">$$ F_{ijk} =
+g_{il}F^l_{jk}\pd_i\tensor\pd_j\tensor\pd_k\in T^3. $$</span></li>
+</ul>
+<p><strong>E.g.:</strong> The metric is a <span
+class="math inline">(2,0)</span>-tensor <span class="math display">$$ g
+= g_{ij} \d{x^i}\tensor\d{x^j}. $$</span> We can raise either index (it
+doesn’t matter which by symmetry) to get <span class="math display">$$
+g^\sharp = g^{il}g_{lj} \pd_i\tensor\d{x^j} $$</span> which is a <span
+class="math inline">(1,1)</span>-tensor, the trace of which is <span
+class="math display"><em>g</em><sup><em>i</em><em>l</em></sup><em>g</em><sub><em>l</em><em>i</em></sub> = <em>δ</em><sub><em>i</em></sub><sup><em>i</em></sup> = <em>n</em>,</span>
+the dimension of the manifold(!). Thus <span class="math display">$$
+\tr(g) := \tr(g^\sharp) = n. $$</span> To be fair, this is a fairly
+trivial example.</p>
+<p><strong>E.g.:</strong> On the other hand, let’s do a much less
+trivial example. Recall the curvature endomorphism <span
+class="math display">$$
+R^i_{jkl}\pd_i\tensor\d{x^j}\tensor\d{x^k}\tensor\d{x^l}. $$</span> We
+can lower the first index to get the curvature tensor <span
+class="math display">$$
+R_{ijkl} = g_{im}R^m_{jkl}
+R = R_{ijkl}\d{x^i}\tensor\d{x^j}\tensor\d{x^k}\tensor\d{x^l}
+$$</span> which you may be more familiar with. The trace of this <span
+class="math inline">(4,0)</span>-tensor is by definition the trace of
+the endomorphism, which is by definition the Ricci curvature: <span
+class="math display">$$
+\tr((4,0)\textrm{-tensor curvature tensor}) \\
+= \tr((3,1)\textrm{-tensor curvature endomorphism}) \\
+= \tr(R^i_{jkl}\pd_i\tensor\d{x^j}\tensor\d{x^k}\tensor\d{x^l}) \\
+= R^i_{jki}\d{x^j}\tensor\d{x^k} \\
+= Rc_{jk}\d{x^j}\tensor\d{x^k}
+$$</span> We can go further now at take the trace of the Ricci curvature
+<span class="math display">$$ Rc = R_{ij}\d{x^i}\tensor\d{x^j} $$</span>
+but this time we need a musical isomorphism to raise an index: <span
+class="math display">$$
+S = \tr(Rc) = \tr(Rc^\sharp)
+  = \tr(g^{il}\R_{lj}\pd_i\tensor\d{x^j})
+  = g^{il}R_{li}.
+$$</span></p>
+<p>Note that each time we define a curvature using a trace which
+requires a musical isomorphism, we must first prove that it doesn’t
+matter which index we raise or lower. These curvatures (Ricci, scalar)
+are only well-defined because the various tensors involved (metric,
+Riemannian curvature tensor, Riemannian curvature endomorphism, Ricci
+curvature) have symmetries that indeed mean that it doesn’t matter which
+index we raise or lower.</p>
+</html>
