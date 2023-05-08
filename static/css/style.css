@@ -5,12 +5,14 @@ span {
 }
 
 body {
-	max-width: 33em;
+	max-width: 30em;
 	margin: auto;
 	font-family: "Times New Roman", "Times", serif;
+	font-size: 12pt;
 	padding: 10pt;
 	color: #222;
 	background: #fffaf5;
+	line-height: 1.5em;
 }
 
 h1, h2, h3, h4 {
@@ -18,7 +20,6 @@ h1, h2, h3, h4 {
 }
 
 ul {
-	font-family: "Helvetica Neue", "Helvetica", sans-serif;
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
 }
@@ -28,13 +29,6 @@ li {
 	line-height: 1.5em;
 	margin-top: 0;
 	margin-bottom: 0;
-}
-
-dt {
-	font-family: "Helvetica Neue", "Helvetica", sans-serif;
-	font-size: 1em;
-	line-height: 1.5em;
-	margin-top: 1em;
 }
 
 img {
@@ -86,14 +80,14 @@ nav li {
 	list-style: none;
 }
 
-nav a {
+a {
 	text-decoration: none;
 	color: #44f;
 }
 
 p {
 	font-family: "Times New Roman", "Times", serif;
-	font-size: 14pt;
+	font-size: 1em;
 	word-spacing: 0em;
 	line-height: 1.5;		/* keep line-height, margin-top, and margin-bottom the same */
 	margin-top: 1.5em;
