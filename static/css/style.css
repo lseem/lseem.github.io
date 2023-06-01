@@ -1,13 +1,33 @@
 /* The line height is 1.5*font-size of paragraph = 1.5*14pt = 21pt. So every vertically-spaced object must take up a multiple of 21pt.*/
 
+@font-face {
+    font-family: "Latin Modern Roman";
+    src: url("/static/fonts/lmroman12-regular.otf");
+}
+@font-face {
+    font-family: "Latin Modern Roman";
+    src: url("/static/fonts/lmroman12-bold.otf");
+	font-weight: bold;
+}
+@font-face {
+    font-family: "Latin Modern Roman";
+    src: url("/static/fonts/lmroman12-italic.otf");
+	font-style: italic;
+}
+
+:root{
+	--text: "Latin Modern Roman", "Times New Roman", "Times", serif;
+	--heading: "Latin Modern Roman", "Times New Roman", "Times", sans-serif;
+}
+
 span {
-	font-family: "Helvetica Neue", "Helvetica", sans-serif;
+	font-family: var(--heading);
 }
 
 body {
 	max-width: 30em;
 	margin: auto;
-	font-family: "Times New Roman", "Times", serif;
+	font-family: var(--text);
 	font-size: 12pt;
 	padding: 10pt;
 	color: #222;
@@ -16,7 +36,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-	font-family: "Helvetica Neue", "Helvetica", sans-serif;
+	font-family: var(--heading);
 }
 
 ul {
@@ -86,7 +106,7 @@ a {
 }
 
 p {
-	font-family: "Times New Roman", "Times", serif;
+	font-family: var(--text);
 	font-size: 1em;
 	word-spacing: 0em;
 	line-height: 1.5;		/* keep line-height, margin-top, and margin-bottom the same */
