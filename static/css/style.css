@@ -1,20 +1,5 @@
 /* The line height is 1.5*font-size of paragraph = 1.5*14pt = 21pt. So every vertically-spaced object must take up a multiple of 21pt.*/
 
-@font-face {
-    font-family: "Latin Modern Roman";
-    src: url("/static/fonts/lmroman12-regular.otf");
-}
-@font-face {
-    font-family: "Latin Modern Roman";
-    src: url("/static/fonts/lmroman12-bold.otf");
-	font-weight: bold;
-}
-@font-face {
-    font-family: "Latin Modern Roman";
-    src: url("/static/fonts/lmroman12-italic.otf");
-	font-style: italic;
-}
-
 @font-face{
 	font-family: "Gentium Basic";
 	src: url("/static/fonts/GenBasR.ttf");
@@ -37,8 +22,8 @@
 }
 
 :root{
-	--text: "Gentium Basic", "Latin Modern Roman", "Times New Roman", "Times", serif;
-	--heading: "Gentium Basic", "Latin Modern Roman", "Times New Roman", "Times", sans-serif;
+	--text: "Gentium Basic", "Times New Roman", "Times", serif;
+	--heading: "Gentium Basic", "Times New Roman", "Times", serif;
 }
 
 span {
