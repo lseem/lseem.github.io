@@ -1,33 +1,34 @@
 /* The line height is 1.5*font-size of paragraph = 1.5*14pt = 21pt. So every vertically-spaced object must take up a multiple of 21pt.*/
 
 @font-face{
-	font-family: "Gentium Basic";
-	src: url("/static/fonts/GenBasR.ttf");
+	font-family: "Cormorant Garamond";
+	src: url("/static/fonts/CormorantGaramond-Regular.ttf");
 }
 @font-face{
-	font-family: "Gentium Basic";
-	src: url("/static/fonts/GenBasI.ttf");
+	font-family: "Cormorant Garamond";
+	src: url("/static/fonts/CormorantGaramond-Italic.ttf");
 	font-style: italic;
 }
 @font-face{
-	font-family: "Gentium Basic";
-	src: url("/static/fonts/GenBasB.ttf");
+	font-family: "Cormorant Garamond";
+	src: url("/static/fonts/CormorantGaramond-Bold.ttf");
 	font-weight: bold;
 }
 @font-face{
-	font-family: "Gentium Basic";
-	src: url("/static/fonts/GenBasBI.ttf");
+	font-family: "Cormorant Garamond";
+	src: url("/static/fonts/CormorantGaramond-BoldItalic.ttf");
 	font-weight: bold;
 	font-style: italic;
 }
 
 :root{
-	--text: "Gentium Basic", "Times New Roman", "Times", serif;
-	--heading: "Gentium Basic", "Times New Roman", "Times", serif;
+	--text: "Cormorant Garamond", "Times New Roman", "Times", serif;
+	--heading: "Cormorant Garamond", "Times New Roman", "Times", serif;
 }
 
 span {
 	font-family: var(--heading);
+	font-variant: small-caps;
 }
 
 body {
@@ -43,6 +44,8 @@ body {
 
 h1, h2, h3, h4 {
 	font-family: var(--heading);
+	font-variant: small-caps;
+	font-weight: normal;
 }
 
 ul {
@@ -91,7 +94,7 @@ nav::after {
 nav span {
 	margin: 0; 
 	padding: 0;
-	font-weight: bold;
+	font-weight: normal;
 	font-size: 24pt;
 }
 
