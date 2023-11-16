@@ -1,5 +1,4 @@
 /* The line height is 1.5*font-size of paragraph = 1.5*14pt = 21pt. So every vertically-spaced object must take up a multiple of 21pt.*/
-
 @font-face{
 	font-family: "Cormorant Garamond";
 	src: url("/static/fonts/CormorantGaramond-Regular.ttf");
@@ -24,7 +23,22 @@
 :root{
 	--text: "Cormorant Garamond", "Times New Roman", "Times", serif;
 	--heading: "Cormorant Garamond", "Times New Roman", "Times", serif;
+	--text-color: #222;
 }
+
+header {
+	max-width: 30em;
+	margin: auto;
+}
+
+article {
+	column-count: auto;
+	column-width: 20em;
+	column-rule-style: solid;
+	column-rule-width: 1px;
+	column-rule-color: var(--text-color);
+}
+
 
 span {
 	font-family: var(--heading);
@@ -32,12 +46,12 @@ span {
 }
 
 body {
-	max-width: 30em;
+	max-width: 45em;
 	margin: auto;
 	font-family: var(--text);
 	font-size: 14pt;
 	padding: 10pt;
-	color: #222;
+	color: var(--text-color);
 	background: #fffaf5;
 	line-height: 1.5em;
 }
@@ -46,11 +60,16 @@ h1, h2, h3, h4 {
 	font-family: var(--heading);
 	font-variant: small-caps;
 	font-weight: normal;
+	column-span: all;
+	display: block;
+	text-align: center;
 }
 
 ul {
-	margin-top: 1.5em;
+	/*margin-top: 1.5em;*/
 	margin-bottom: 1.5em;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
 }
 
 li {
@@ -58,6 +77,7 @@ li {
 	line-height: 1.5em;
 	margin-top: 0;
 	margin-bottom: 0;
+	break-inside: avoid;
 }
 
 img {
@@ -104,7 +124,7 @@ nav ul {
 }
 
 nav li {
-	display: inline;
+	display: inline-block;
 	margin-right: 1em;
 	list-style: none;
 }
@@ -130,11 +150,11 @@ h1 { /* total height: 1*2 + 1.5 + 1.5 = 5em */
 	margin-bottom: 1.5em;
 }
 
-h2 { /* total height: 1*1.8 + 2.1 + 1.1 = 5em */
+h2 { /* total height: 1*1.8 + 1.4 + 0.8 = 4em */
 	font-size: 1.8em;
 	line-height: 1;
-	margin-top: 2.1em;
-	margin-bottom: 1.1em;
+	margin-top: 1.4em;
+	margin-bottom: 0.8em;
 }
 
 h3 { /* total height: 1*1.5 + 1.3 + 0.2 = 3em */
@@ -142,6 +162,12 @@ h3 { /* total height: 1*1.5 + 1.3 + 0.2 = 3em */
 	line-height: 1;
 	margin-top: 1.3em;
 	margin-bottom: 0.2em;
+}
+
+hr {
+	margin-top: 3em;
+	border-top: 1px solid var(--text-color);
+	column-span: all;
 }
 
 sup {
