@@ -1,28 +1,9 @@
 /* The line height is 1.5*font-size of paragraph = 1.5*14pt = 21pt. So every vertically-spaced object must take up a multiple of 21pt.*/
-@font-face{
-	font-family: "Cormorant Garamond";
-	src: url("/static/fonts/CormorantGaramond-Regular.ttf");
-}
-@font-face{
-	font-family: "Cormorant Garamond";
-	src: url("/static/fonts/CormorantGaramond-Italic.ttf");
-	font-style: italic;
-}
-@font-face{
-	font-family: "Cormorant Garamond";
-	src: url("/static/fonts/CormorantGaramond-Bold.ttf");
-	font-weight: bold;
-}
-@font-face{
-	font-family: "Cormorant Garamond";
-	src: url("/static/fonts/CormorantGaramond-BoldItalic.ttf");
-	font-weight: bold;
-	font-style: italic;
-}
+@import url("//fonts.googleapis.com/css?family=EB Garamond");
 
 :root{
-	--text: "Cormorant Garamond", "Times New Roman", "Times", serif;
-	--heading: "Cormorant Garamond", "Times New Roman", "Times", serif;
+	--text: "EB Garamond", "Times New Roman", "Times", serif;
+	--heading: "EB Garamond", "Times New Roman", "Times", serif;
 	--text-color: #222;
 }
 
@@ -173,3 +154,13 @@ hr {
 sup {
 	line-height:0;
 }
+#refs {
+	column-span: all;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+.csl-left-margin {
+	display: inline-block;
+	margin-right: 1.5em;
+}
+.csl-right-inline {display: inline; }
