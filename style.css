@@ -1,5 +1,5 @@
 /* The line height is 1.5*font-size of paragraph = 1.5*14pt = 21pt. So every vertically-spaced object must take up a multiple of 21pt.*/
-@import url("//fonts.googleapis.com/css?family=EB Garamond");
+@import url("//fonts.googleapis.com/css?family=EB Garamond:400,400italic");
 
 :root{
 	--text: "EB Garamond", "Times New Roman", "Times", serif;
