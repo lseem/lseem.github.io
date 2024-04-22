@@ -51,6 +51,7 @@ ul {
 	margin-bottom: 1.5em;
 	margin-left: 0.5em;
 	margin-right: 0.5em;
+	padding-inline-start: 1em;
 }
 
 li {
@@ -164,3 +165,11 @@ sup {
 	margin-right: 1.5em;
 }
 .csl-right-inline {display: inline; }
+
+@media (max-width: 600px) {
+	body {
+		font-size: 0.9em;
+	}
+	ul {
+	}
+}
