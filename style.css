@@ -8,6 +8,7 @@
 	--link-color: #00aaff;
 	--text-color: #222;
 	--bg-color: #fffaf5;
+	--num-papers: 1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -43,6 +44,7 @@ header figure {
 
 header figure img {
 	max-width: 100%;
+	max-height: 15em;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 1.5em;
@@ -86,7 +88,7 @@ body {
 	max-width: 45em;
 	margin: auto;
 	font-family: var(--text);
-	font-size: 14pt;
+	font-size: 12pt;
 	padding: 0.8em;
 	color: var(--text-color);
 	background: var(--bg-color);
@@ -103,7 +105,7 @@ h1, h2, h3, h4 {
 	text-align: left;
 }
 
-ul {
+ul, ol {
 	/*margin-top: 1.5em;*/
 	margin-bottom: 1.5em;
 	margin-left: 0.5em;
@@ -205,6 +207,18 @@ hr {
 
 sup {
 	line-height:0;
+}
+
+.rev-lists > ol {
+	counter-reset: paper-counter var(--num-papers);
+	counter-increment: paper-counter;
+	list-style-type: none;
+}
+.rev-lists > ol > li {
+	counter-increment: paper-counter -1;
+}
+.rev-lists > ol > li::marker {
+	content: counter(paper-counter) ". ";
 }
 
 #refs {
