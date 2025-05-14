@@ -25,42 +25,22 @@ header {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: auto auto;
-	column-gap: 1em;
+	column-gap: 0em;
 	row-gap: 0;
 	align-items: center;
 	justify-items: center;
 	margin-top: 0;
 	margin-bottom: 0;
-	padding-top: 0;
+	padding-top: 1em;
 	padding-bottom: 0;
-}
-
-header figure {
-	grid-column: 2;
-	grid-row: 1 / span 2;
-	max-width: 100%;
-	text-align: center;
-	margin: auto;
-}
-
-header figure img {
-	max-width: 100%;
-	max-height: 15em;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 1.5em;
-	margin-bottom: 1.5em;
-	border-radius: 5%;
-}
-
-header figure figcaption {
-	display: none;
-	text-align: center;
 }
 
 header p {
 	grid-column: 1;
 	grid-row: 1;
+	padding-right: 0.5em;
+	margin-top: 0em;
+	margin-botto: 0em;
 }
 
 header ul {
@@ -73,6 +53,26 @@ header ul {
 	color: var(--text-color);
 	background: var(--bg-color);
 	line-height: 1.5em;
+	padding-right: 0.5em;
+}
+
+.notice {
+	color: var(--notice-color);
+	font-size: 1em;
+	font-weight: bold;
+	grid-column: 2;
+	grid-row: 1 / span 2;
+	border-left: 0.06em solid var(--text-color);
+	height: 100%;
+	padding-left: 0.5em;
+}
+.notice h2 {
+	text-align: center;
+	margin-top: 0em;
+}
+.notice a {
+	color: var(--notice-color);
+	font-style: italic;
 }
 
 article {
@@ -208,17 +208,6 @@ hr {
 
 sup {
 	line-height:0;
-}
-
-.notice {
-	text-align: center;
-	font-size: 2em;
-	font-weight: bold;
-	font-style: italic;
-}
-.notice a {
-	color: var(--notice-color);
-	text-decoration: underline;
 }
 
 .rev-lists > ol {
