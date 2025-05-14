@@ -9,6 +9,7 @@
 	--text-color: #222;
 	--bg-color: #fffaf5;
 	--num-papers: 1;
+	--notice-color: #ff3688;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -207,6 +208,17 @@ hr {
 
 sup {
 	line-height:0;
+}
+
+.notice {
+	text-align: center;
+	font-size: 2em;
+	font-weight: bold;
+	font-style: italic;
+}
+.notice a {
+	color: var(--notice-color);
+	text-decoration: underline;
 }
 
 .rev-lists > ol {
