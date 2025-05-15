@@ -68,7 +68,8 @@ header ul {
 }
 .notice h2 {
 	text-align: center;
-	margin-top: 0em;
+	margin-top: 0.7em;
+	margin-bottom: 0.3em;
 }
 .notice a {
 	color: var(--notice-color);
@@ -232,21 +233,25 @@ sup {
 }
 .csl-right-inline {display: inline; }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
 	body {
 		font-size: 0.9em;
 	}
-}
-
-@media (max-width: 400px) {
+	.notice {
+		border-left: 0em;
+		grid: unset;
+	}
+	.notice h2 {
+		margin-top: 1.3em;
+		margin-bottom: 0.3em;
+	}
 	header {
 		display: block;
-	}
-	header figure {
-		display: none;
-		grid: unset;
 	}
 	header p, header ul {
 		grid: unset;
 	}
+}
+
+@media (max-width: 400px) {
 }
