@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
      width="512" height="512" viewBox="-256.0 -256.0 512 512">
+<style>
+path { stroke: black; }
+@media (prefers-color-scheme: dark) {
+	path { stroke: white; }
+}
+</style>
 <defs>
 </defs>
 <g transform="scale(1,-1)">
