@@ -48,6 +48,7 @@ header ul {
 	grid-row: 2;
 	max-width: 45em;
 	margin: auto;
+	margin-left: 1em;
 	font-family: var(--text);
 	padding: 0.8em;
 	color: var(--text-color);
