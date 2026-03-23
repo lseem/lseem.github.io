@@ -57,16 +57,27 @@ header ul {
 	padding-right: 0.5em;
 }
 
+.profile {
+	grid-column: 2;
+	grid-row: 1 / span 3;
+	height: 100%;
+	padding-left: 0.5em;
+	border-left: 0.06em solid var(--text-color);
+	align-content: center;
+}
+
+.profile img {
+	max-width: 100%;
+}
+
 .notice {
+	grid-column: 1;
+	grid-row: 3;
 	color: var(--notice-color);
 	font-size: 1em;
 	font-weight: bold;
-	grid-column: 2;
-	grid-row: 1 / span 2;
-	border-left: 0.06em solid var(--text-color);
-	height: 100%;
-	padding-left: 0.5em;
 }
+
 .notice h2 {
 	text-align: center;
 	margin-top: 0.7em;
@@ -238,9 +249,11 @@ sup {
 	body {
 		font-size: 0.9em;
 	}
-	.notice {
+	.profile {
 		border-left: 0em;
 		grid: unset;
+		margin:auto;
+		max-width: 80%;
 	}
 	.notice h2 {
 		margin-top: 1.3em;
