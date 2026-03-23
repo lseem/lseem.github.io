@@ -223,6 +223,7 @@ sup {
 	line-height:0;
 }
 
+/*
 .rev-lists > ol {
 	counter-reset: paper-counter var(--num-papers);
 	counter-increment: paper-counter;
@@ -233,6 +234,25 @@ sup {
 }
 .rev-lists > ol > li::marker {
 	content: counter(paper-counter) ". ";
+}
+*/
+
+.rev-lists > ol {
+counter-reset: paper-counter var(--num-papers);
+counter-increment: paper-counter;
+list-style-type: none;
+padding-left: 1em;
+}
+.rev-lists > ol > li {
+counter-increment: paper-counter -1;
+position: relative;
+}
+.rev-lists > ol > li::before {
+white-space: pre;
+content: counter(paper-counter) ".";
+position: absolute;
+right: 100%;
+margin-right: 0.5em;
 }
 
 #refs {
